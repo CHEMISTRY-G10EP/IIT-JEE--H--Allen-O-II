@@ -10,7 +10,7 @@
     body {
       font-family: Arial, sans-serif;
       padding: 20px;
-      background: #121212;
+      background: #2b3359;
       color: #f0f0f0;
     }
     #logo {
@@ -21,7 +21,7 @@
       height: auto;
     }
     #name-container {
-      background: #1e1e1e;
+      background: #010d2b;
       padding: 30px;
       border-radius: 6px;
       max-width: 420px;
@@ -38,11 +38,11 @@
     }
     #quiz-container { display: none; }
     .question {
-      border: 1px solid #333;
+      border: 1px solid #d4b935;
       padding: 15px;
       margin-bottom: 20px;
       border-radius: 5px;
-      background: #1e1e1e;
+      background: #010d2b;
     }
     .question h3 { margin: 0 0 10px; }
     .option-item {
@@ -52,7 +52,7 @@
       margin: 6px 0;
       padding: 6px 8px;
       border-radius: 4px;
-      background: #2a2a2a;
+      background: #0a2463;
       color: #ccc;
       cursor: pointer;
     }
@@ -70,9 +70,20 @@
     .solution {
       display: none;
       margin-top: 10px;
-      background: #2d2d2d;
+      background: #0a2463;
       padding: 10px;
       border-left: 4px solid #28a745;
+    }
+    /* New PPT button style */
+    .ppt-button {
+      margin-top: 8px;
+      padding: 6px 12px;
+      background: #6f42c1;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      display: none; /* hidden by default */
     }
     #scorecard {
       background: #2d2d2d;
@@ -98,7 +109,7 @@
     }
     @media print {
       body { background: #fff; color: #000; }
-      .submit-button, .dontknow-button, .toggle-button, #reportBtn, #reportModal {
+      .submit-button, .dontknow-button, .toggle-button, .ppt-button, #reportBtn, #reportModal {
         display: none !important;
       }
       #name-container { display: none !important; }
@@ -153,13 +164,29 @@
       .submit-button, .dontknow-button { width: 100%; margin-bottom: 10px; }
     }
     #scoreTable { overflow-x: auto; display: block; width: 100%; }
-    /* New: Question type label */
     .type-label {
-      font-size: 13px;
+      font-size: 10px;
       font-weight: bold;
-      color: #0d6efd;
+      color:  #FFD700;
       margin-bottom: 6px;
     }
+	.correct-option {
+  background: #155724 !important;
+  color: #d4edda !important;
+}
+.wrong-option {
+  background: #721c24 !important;
+  color: #f8d7da !important;
+}
+/* Left-align MathJax display equations */
+
+mjx-container[jax="CHTML"][display="true"] {
+  text-align: left !important;
+  margin-left: 10px !important;
+  margin-right: auto !important;
+}
+
+
   </style>
 
   <!-- MathJax Configuration -->
@@ -172,7 +199,10 @@
       },
       options: { skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre'] }
     };
+	const allowedNames = ["Gargi Mohan", "Joysmits", "Jiten", "Charlie", "David", "Eva"];  // Add more names here
   </script>
+ 
+
   <script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 <body>
@@ -222,7 +252,7 @@
   </div>
 </div>
 
-<button id="reportBtn">Report Mistake</button>
+<button id="reportBtn">Report Mistake / Have a Doubt</button>
 
 <div id="reportModal">
   <textarea id="reportMsg" placeholder="Describe the mistake..."></textarea>
@@ -246,11 +276,54 @@ const Q = [
     ],
     "correct": "B",
     "solution": "Using $y_{\\mathrm{MeOH}}=\\dfrac{p_{\\mathrm{MeOH}}}{p_{\\mathrm{MeOH}}+p_{\\mathrm{EtOH}}}=\\dfrac{2.619}{2.619+4.556}\\approx0.3650$, so vapour composition is $y_{\\mathrm{MeOH}}\\approx0.3650,\\;y_{\\mathrm{EtOH}}\\approx0.6350$.",
-    "solution_steps": [
-      "Step 1: For an ideal binary mixture, vapour mole fraction of component $i$ is $\\displaystyle y_i=\\frac{p_i}{p_{\\text{total}}}=\\frac{p_i}{p_1+p_2}$.",
-      "Step 2: Substitute values: $\\displaystyle y_{\\mathrm{MeOH}}=\\frac{2.619}{2.619+4.556}=\\frac{2.619}{7.175}$.",
-      "Step 3: Compute: $\\displaystyle y_{\\mathrm{MeOH}}\\approx0.3650174\\approx0.3650$. Hence $y_{\\mathrm{EtOH}}=1-0.3650174\\approx0.6349826\\approx0.6350$."
-    ]
+       "solution_steps": [
+    "This problem asks to identify the solution with the highest boiling point, assuming each salt is 90% dissociated.",
+    "The boiling point elevation is directly proportional to the molality of the solution and the van't Hoff factor \\(i\\).",
+    "Since all solutions are decimolar, we need to compare the van't Hoff factor \\(i\\).",
+    "Step 1: Calculate the van't Hoff factor \\(i\\) for each salt.",
+    "The van't Hoff factor is calculated as",
+    "$$i = 1 + \\alpha (n - 1)$$ where",
+    "\\(\\alpha\\) is the degree of dissociation and",
+    "\\(n\\) is the number of ions produced per formula unit.",
+    "Given \\(\\alpha = 0.9\\).",
+    "(A) \\(\\text{Al}_2(\\text{SO}_4)_3\\):",
+    "$$n = 2(\\text{Al}^{3+}) + 3(\\text{SO}_4^{2-}) = 5$$",
+    "$$i = 1 + 0.9(5 - 1)$$",
+    "$$= 1 + 0.9 \\times 4$$",
+    "$$= 1 + 3.6$$",
+    "$$= 4.6$$",
+    "(B) \\(\\text{BaCl}_2\\):",
+    "$$n = 1(\\text{Ba}^{2+}) + 2(\\text{Cl}^{-}) = 3$$",
+    "$$i = 1 + 0.9(3 - 1)$$",
+    "$$= 1 + 0.9 \\times 2$$",
+    "$$= 1 + 1.8$$",
+    "$$= 2.8$$",
+    "(C) \\(\\text{Na}_2\\text{SO}_4\\):",
+    "$$n = 2(\\text{Na}^{+}) + 1(\\text{SO}_4^{2-}) = 3$$",
+    "$$i = 1 + 0.9(3 - 1)$$",
+    "$$= 1 + 0.9 \\times 2$$",
+    "$$= 1 + 1.8$$",
+    "$$= 2.8$$",
+    "(D) A solution obtained by mixing equal volumes of (B) and (C):",
+    "Since equal volumes are mixed and both (B) and (C) are decimolar, the resulting solution will contain half the concentration of \\(\\text{BaCl}_2\\) and half the concentration of \\(\\text{Na}_2\\text{SO}_4\\).",
+    "The total effective concentration will be the sum of the effective concentrations of \\(\\text{BaCl}_2\\) and \\(\\text{Na}_2\\text{SO}_4\\) in the mixture.",
+    "Note: For a mixture of equal volumes of two decimolar solutions, the effective van't Hoff factor will be the average of the individual van't Hoff factors (assuming similar densities and ideal mixing).",
+    "$$i_{\\text{mixture}} = \\frac{i_{\\text{BaCl}_2} + i_{\\text{Na}_2\\text{SO}_4}}{2}$$",
+    "$$= \\frac{2.8 + 2.8}{2}$$",
+    "$$= 2.8$$",
+    "Alternatively, consider the total number of ions.",
+    "If we mix equal volumes of \\(0.1\\, \\text{M}\\, \\text{BaCl}_2\\) and \\(0.1\\, \\text{M}\\, \\text{Na}_2\\text{SO}_4\\), the resulting solution will have \\(0.05\\, \\text{M}\\, \\text{BaCl}_2\\) and \\(0.05\\, \\text{M}\\, \\text{Na}_2\\text{SO}_4\\).",
+    "The total concentration of ions will be proportional to",
+    "$$0.05 \\times i_{\\text{BaCl}_2} + 0.05 \\times i_{\\text{Na}_2\\text{SO}_4} = 0.28$$",
+    "Compare the van't Hoff factors.",
+    "The solution with the highest van't Hoff factor will have the highest boiling point.",
+    "$$i_{\\text{Al}_2(\\text{SO}_4)_3} = 4.6$$",
+    "$$i_{\\text{BaCl}_2} = 2.8$$",
+    "$$i_{\\text{Na}_2\\text{SO}_4} = 2.8$$",
+    "$$i_{\\text{mixture}} = 2.8$$",
+    "Answer:",
+    "The correct option is (A) Decimolar \\(\\text{Al}_2(\\text{SO}_4)_3\\)."
+  ]
   },
   {
     "id": "q2",
@@ -301,17 +374,48 @@ const Q = [
     ],
     "correct": "A",
     "solution": "Let solubility be $s\\ (\\mathrm{mol\\,L^{-1}})$. $\\mathrm{XCl_3\\to X^{3+}+3Cl^-}$ (4 particles). Using vapour lowering $x_{\\text{solute}}=\\dfrac{p^0-p}{p^0}=\\dfrac{0.05}{17.25}\\approx0.00289855$, and $x_{\\text{solute}}=\\dfrac{4s}{55.5556+4s}$. Solving gives $s\\approx4.04\\times10^{-2}\\ \\mathrm{mol\\,L^{-1}}$.",
-    "solution_steps": [
-      "Step 1: Vapour lowering (mole-fraction form): $\\displaystyle x_{\\text{solute}}=\\frac{p^0-p}{p^0}=\\frac{17.25-17.20}{17.25}=\\frac{0.05}{17.25}\\approx0.00289855$.",
-      "Step 2: Moles of water in 1 L: $\\displaystyle n_{\\mathrm{H_2O}}=\\frac{1000\\ \\mathrm{g}}{18\\ \\mathrm{g\\,mol^{-1}}}=55.5556\\ \\mathrm{mol}$.",
-      "Step 3: Each formula unit of $\\mathrm{XCl_3}$ gives 4 particles ($\\mathrm{X^{3+}+3Cl^-}$). So total solute-particle moles $=4s$. Thus",
-      "  $$\\displaystyle x_{\\text{solute}}=\\frac{4s}{55.5556+4s}\\;.$$",
-      "Step 4: Solve for $s$ algebraically:",
-      "  $$4s = x_{\\text{solute}}(55.5556+4s)\\Rightarrow 4s(1-x_{\\text{solute}})=x_{\\text{solute}}\\times55.5556,$$",
-      "  $$\\displaystyle s=\\frac{x_{\\text{solute}}\\times55.5556}{4(1-x_{\\text{solute}})}\\approx0.0403747\\ \\mathrm{mol\\,L^{-1}}.$$",
-      "Step 5: Round and present: $s\\approx4.04\\times10^{-2}\\ \\mathrm{mol\\,L^{-1}}$ (option A)."
-    ]
-  },
+     "solution_steps": [
+    "Step 1: Write down the given information and relevant formulas",
+    "Vapor pressure of the solution, \\(P_{solution}=17.20\\) mm Hg",
+    "Vapor pressure of pure water, \\(P_{water}^{\\circ}=17.25\\) mm Hg",
+    "The salt is a sparingly soluble salt, \\(XCl_{3}\\).",
+    "The solvent is water, \\(H_{2}O\\).",
+    "Molar mass of water, \\(M_{H_{2}O}=18\\) g/mol.",
+    "The solubility of the salt in mol/L is to be calculated.",
+    "The relative lowering of vapor pressure for a dilute solution containing a non-volatile electrolyte is given by Raoult's Law, modified with the van't Hoff factor, \\(i\\):",
+    "$$\\frac{P_{water}^{\\circ}-P_{solution}}{P_{water}^{\\circ}} = i \\cdot \\chi_{solute}$$",
+    "For a dilute solution, the mole fraction of the solute (\\(\\chi_{solute}\\)) can be approximated as:",
+    "$$\\chi_{solute} \\approx \\frac{n_{solute}}{n_{water}}$$",
+    "Combining these gives:",
+    "$$\\frac{P_{water}^{\\circ}-P_{solution}}{P_{water}^{\\circ}} = i \\cdot \\frac{n_{solute}}{n_{water}}$$",
+    "Here, \\(n_{solute}\\) is the total number of moles of ions formed from the salt.",
+    "The van't Hoff factor, \\(i\\), is the number of ions the salt dissociates into.",
+    "For \\(XCl_{3}\\), the dissociation is:",
+    "$$XCl_{3} \\rightleftharpoons X^{3+} + 3Cl^{-}$$",
+    "The total number of ions is 1 cation (\\(X^{3+}\\)) and 3 anions (\\(Cl^{-}\\)), so \\(i = 4\\).",
+    "Step 2: Calculate the mole ratio",
+    "Use the given vapor pressure values to find the ratio of moles of solute particles to moles of water.",
+    "$$\\frac{17.25 - 17.20}{17.25} = 4 \\cdot \\frac{n_{solute}}{n_{water}}$$",
+    "$$\\frac{0.05}{17.25} = 4 \\cdot \\frac{n_{solute}}{n_{water}}$$",
+    "$$0.00289855 = 4 \\cdot \\frac{n_{solute}}{n_{water}}$$",
+    "$$\\frac{n_{solute}}{n_{water}} = \\frac{0.00289855}{4} = 7.24637 \\times 10^{-4}$$",
+    "Step 3: Calculate the solubility",
+    "The solubility (\\(S\\)) in mol/L is the molarity of the solution.",
+    "Molarity is moles of solute per liter of solution.",
+    "For a very dilute solution, the volume of 1 kg of water (1 L) is approximately equal to the volume of the solution.",
+    "Assuming the volume of the solution is 1 L, the mass of water is 1000 g.",
+    "The number of moles of water in 1 L is:",
+    "$$n_{water} = \\frac{1000\\text{ g}}{18\\text{ g/mol}} \\approx 55.55\\text{ mol}$$",
+    "From the mole ratio in Step 2:",
+    "$$n_{solute} = (7.24637 \\times 10^{-4}) \\times n_{water}$$",
+    "$$n_{solute} = (7.24637 \\times 10^{-4}) \\times 55.55\\text{ mol}$$",
+    "$$n_{solute} \\approx 0.04025\\text{ mol}$$",
+    "Since we assumed 1 L of solution, the molarity (solubility) is:",
+    "$$S = \\frac{0.04025\\text{ mol}}{1\\text{ L}} \\approx 4.025 \\times 10^{-2}\\text{ mol L}^{-1}$$",
+    "Rounding to two significant figures, the solubility is \\(4.0 \\times 10^{-2}\\) mol L⁻¹.",
+    "This matches option A in similar problems found in search results."
+  ]
+},
   {
     "id": "q5",
     "text": "A solution has a $1:4$ mole ratio of pentane to hexane. The vapour pressures of the pure hydrocarbons at $20^\\circ\\mathrm{C}$ are $440\\ \\mathrm{mmHg}$ for pentane and $120\\ \\mathrm{mmHg}$ for hexane. The mole fraction of pentane in the vapour phase would be:",
@@ -332,7 +436,7 @@ const Q = [
   },
   {
     "id": "q6",
-    "text": "For which of the following van't Hoff's factors is the value NOT correctly matched? (A) $\\mathrm{Na_2SO_4}$, $50\\%$ → $i=2$; (B) $\\mathrm{K_3[Fe(CN)_6]}$, $75\\%$ → $i=3.25$; (C) $\\mathrm{[Ag(NH_3)_2]Cl}$, $80\\%$ → $i=1.8$; (D) $\\mathrm{[Cr(NH_3)_5Cl]SO_4}$, $90\\%$ → $i=2.8$.",
+    "text": "For which of the following van't Hoff's factors is the value NOT correctly matched? .",
     "options": [
       "A) $\\mathrm{Na_2SO_4}$, $50\\%$, $i=2$",
       "B) $\\mathrm{K_3[Fe(CN)_6]}$, $75\\%$, $i=3.25$",
@@ -343,15 +447,16 @@ const Q = [
     "solution": "Van't Hoff factor $\\displaystyle i=1+(n-1)\\alpha$. For $\\mathrm{[Cr(NH_3)_5Cl]SO_4}$ the salt dissociates into two ions ($n=2$) so $i=1+(2-1)\\times0.90=1.90$, not $2.8$. Hence (D) is incorrect.",
     "solution_steps": [
       "Step 1: Formula: $\\displaystyle i=1+(n-1)\\alpha$, where $n$ is number of particles on full dissociation and $\\alpha$ is degree of dissociation.",
-      "Step 2 (A): $\\mathrm{Na_2SO_4\\to 2Na^++SO_4^{2-}}$, so $n=3$. With $\\alpha=0.50$, $\\displaystyle i=1+(3-1)\\times0.50=1+1=2.00$ → matches.",
-      "Step 3 (B): $\\mathrm{K_3[Fe(CN)_6]\\to 3K^++[Fe(CN)_6]^{3-}}$, so $n=4$. With $\\alpha=0.75$, $\\displaystyle i=1+(4-1)\\times0.75=1+2.25=3.25$ → matches.",
-      "Step 4 (C): $\\mathrm{[Ag(NH_3)_2]Cl\\to [Ag(NH_3)_2]^++Cl^-}$, so $n=2$. With $\\alpha=0.80$, $\\displaystyle i=1+(2-1)\\times0.80=1.80$ → matches.",
-      "Step 5 (D): $\\mathrm{[Cr(NH_3)_5Cl]SO_4\\to [Cr(NH_3)_5Cl]^{2+}+SO_4^{2-}}$, so $n=2$. With $\\alpha=0.90$, $\\displaystyle i=1+(2-1)\\times0.90=1.90$. The given $i=2.8$ is incorrect → option (D) is NOT correctly matched."
+      "Step 2 (A): $\\mathrm{Na_2SO_4\\to 2Na^++SO_4^{2-}}$, so $n=3$.", "With $\\alpha=0.50$, $\\displaystyle i=1+(3-1)\\times0.50=1+1=2.00$ → matches.",
+      "Step 3 (B): $\\mathrm{K_3[Fe(CN)_6]\\to 3K^++[Fe(CN)_6]^{3-}}$, so $n=4$.", "With $\\alpha=0.75$, $\\displaystyle i=1+(4-1)\\times0.75=1+2.25=3.25$ → matches.",
+      "Step 4 (C): $\\mathrm{[Ag(NH_3)_2]Cl\\to [Ag(NH_3)_2]^++Cl^-}$, so $n=2$.", "With $\\alpha=0.80$, $\\displaystyle i=1+(2-1)\\times0.80=1.80$ → matches.",
+      "Step 5 (D): $\\mathrm{[Cr(NH_3)_5Cl]SO_4\\to [Cr(NH_3)_5Cl]^{2+}+SO_4^{2-}}$, so $n=2$.", "With $\\alpha=0.90$, $\\displaystyle i=1+(2-1)\\times0.90=1.90$. The given $i=2.8$ is incorrect → option (D) is NOT correctly matched."
     ]
   },
   {
     "id": "q7",
-    "text": "In the depression of freezing point experiment, it is found that:",
+    "text": "In the depression of freezing point experiment, it is found that:<br>(I) The vapour pressure of the solution is less than that of pure solvent.<br>(II) The vapour pressure of the solution is more than that of pure solvent.<br>(III) Only solute molecules solidify at the freezing point.<br>(IV) Only solvent molecules solidify at the freezing point.",
+
     "options": [
       "A) I, II",
       "B) II, III",
@@ -398,15 +503,22 @@ const Q = [
       "C) If mole percent of B in liquid phase is 10% then mole percent of B in vapour phase is 40%",
       "D) If mole percent of A in solution is 50% then its boiling point is 350 K"
     ],
-    "correct": ["C","D"],
+    "correct": "C",
     "solution": "From the phase diagram: (A) is true because B has higher boiling point and hence is less volatile. (B) is true — Raoult’s law and vapour-liquid equilibrium support this. (C) is incorrect because if $x_B=0.10$, $y_B$ is closer to ~0.20, not 0.40. (D) is incorrect because at 50% mole fraction the boiling point lies between 300K and 400K but not exactly 350K.",
     "solution_steps": [
-      "Step 1: Volatility depends on vapour pressure → lower vapour pressure means less volatile. B has higher boiling point → less volatile → (A) correct.",
-      "Step 2: At $x_A=0.40$, vapour phase $y_A=0.50$ is consistent with phase diagram → (B) correct.",
-      "Step 3: At $x_B=0.10$, $y_B$ is significantly less than 0.40 → (C) incorrect.",
-      "Step 4: At $x_A=0.50$, boiling point is between 300K and 400K but not exactly 350K → (D) incorrect.",
-      "Step 5: Hence incorrect statements are (C) and (D)."
-    ]
+  "Step 1: The diagram represents a T-composition (temperature vs composition) phase diagram for a binary mixture of A and B. The lower curve is the liquid-phase curve that shows how the boiling point changes with the liquid composition \\(x_B\\), while the upper curve is the vapour-phase curve showing the vapour composition \\(y_B\\) at the same temperature.",
+  
+  "Step 2: Statement (A) claims that 'B is less volatile than A.' From the diagram, pure A boils at 300 K and pure B at 400 K. A lower boiling point means higher volatility, so A is more volatile than B, which makes this statement True.",
+  
+  "Step 3: Statement (B) says that 'If mole percent of A in liquid phase is 40% then mole percent of A in vapour phase is 50%.' Using \\(x_A = 0.40\\), we get \\(x_B = 1 - 0.40 = 0.60\\). By drawing a vertical line at \\(x_B = 0.60\\) up to the liquid curve and then a horizontal line to the vapour curve, we find that \\(y_B\\) is about 0.50. Therefore, \\(y_A = 1 - 0.50 = 0.50\\), confirming the statement is True.",
+  
+  "Step 4: Statement (C) says that 'If mole percent of B in liquid phase is 10% then mole percent of B in vapour phase is 40%.' Here, \\(x_B = 0.10\\), meaning B is a minor component. In systems where A is more volatile, the vapour is richer in A, hence \\(y_B\\) will be even less than \\(x_B\\), certainly not larger like 0.40. Thus, this statement is False.",
+  
+  "Step 5: Statement (D) says that 'If the mole percent of A in solution is 50% then its boiling point is 350 K.' With \\(x_A = 0.50\\), we get \\(x_B = 0.50\\). According to the diagram, at \\(x_B = 0.50\\), the boiling point from the liquid curve is exactly 350 K, confirming this statement is True.",
+  
+  "Step 6: Final conclusion — only statement (C) is inconsistent with the diagram. Statements (A), (B), and (D) are supported by the phase behaviour depicted in the diagram. Therefore, the correct answer is that only statement (C) is incorrect."
+ ],
+    "pptUrl": "https://gten-educational-platform.github.io/my-scorm-course/Course2/res/index.html"
   },
   {
     "id": "q10",
@@ -421,11 +533,19 @@ const Q = [
     "correct": "D",
     "solution": "At point Z, the mixture corresponds to an azeotrope. For azeotropes, distillate composition is the same as liquid composition (so A is false), boiling point is fixed (so B is false), and vapour pressure is not minimum for all compositions (so C is false). The correct fact is that azeotropic composition depends on external pressure, hence (D).",
     "solution_steps": [
-      "Step 1: Azeotrope = constant boiling mixture → composition of vapour = composition of liquid → option (A) false.",
-      "Step 2: Boiling point does not change continuously but is fixed → option (B) false.",
-      "Step 3: Vapour pressure minimum occurs in positive deviation azeotropes, not all → option (C) false.",
-      "Step 4: Azeotrope composition depends on external pressure → option (D) correct."
-    ]
+  "Step 1: Analyze the provided diagram and identify point Z. The image shows a temperature-composition phase diagram for a binary liquid mixture. The x-axis represents the mole fraction (\\(x_A\\) for the liquid phase, \\(y_A\\) for the vapor phase), and the y-axis represents the temperature. Point Z is located at the intersection of the liquid and vapor phase curves, where the composition of the liquid phase (\\(x_A\\)) is equal to the composition of the vapor phase (\\(y_A\\)). This point represents an azeotropic mixture, specifically a minimum boiling azeotrope, because the temperature at point Z is lower than the boiling points of the pure components where \\(x_A = 0\\) or \\(x_A = 1\\).",
+
+  "Step 2: Understand the properties of an azeotrope during distillation. An azeotrope is a constant-boiling mixture that distills without a change in composition, meaning the composition of the distillate is the same as the liquid mixture. This occurs because at the azeotropic point, the liquid and vapor phases have the same composition, hence no separation occurs during distillation.",
+
+  "Step 3: Evaluate the given statements based on the properties of an azeotrope. Statement (A): 'The composition of distillate differs from the mixture.' This is incorrect because an azeotrope distills without change in composition; both the liquid and vapor phases have the same composition at the azeotropic point.",
+
+  "Step 4: Statement (B): 'The boiling point goes on changing.' This is incorrect because an azeotrope is a constant-boiling mixture, meaning its boiling point remains constant during distillation, similar to a pure substance, regardless of the amount being distilled.",
+
+  "Step 5: Statement (C): 'The mixture has lowest vapor pressure than for any other composition.' This is incorrect. A minimum boiling azeotrope, like the one at point Z, actually exhibits maximum vapor pressure at that composition compared to other compositions at the same temperature. Only a maximum boiling azeotrope would have the lowest vapor pressure.",
+
+  "Step 6: Statement (D): 'Composition of an azeotrope alters on changing the external pressure.' This is correct because the azeotropic composition and boiling point depend on the external pressure. By changing the pressure, the azeotropic point shifts, resulting in a different composition and boiling temperature."
+ ],
+    "pptUrl": "https://gten-educational-platform.github.io/my-scorm-course/Course3/res/index.html"
   },
   {
     "id": "q11",
@@ -478,12 +598,16 @@ const Q = [
     "correct": "D",
     "solution": "According to Raoult’s law: $P_A = X_A P_A^0$, $P_B = X_B P_B^0$. Since $P_A^0 > P_B^0$, component A is more volatile and enriches in vapour phase, so $Y_A > X_A$. This leads to $\\dfrac{Y_A}{Y_B} > \\dfrac{X_A}{X_B}$.",
     "solution_steps": [
-      "Step 1: Raoult’s law: $P_A = X_A P_A^0$, $P_B = X_B P_B^0$.",
-      "Step 2: Mole fraction in vapour: $Y_A = \\dfrac{P_A}{P_A+P_B}$, $Y_B = \\dfrac{P_B}{P_A+P_B}$.",
-      "Step 3: Since $P_A^0 > P_B^0$, $Y_A > X_A$.",
-      "Step 4: Therefore, $\\dfrac{Y_A}{Y_B} > \\dfrac{X_A}{X_B}$.",
-      "Step 5: Correct option is (D)."
-    ]
+  "Step 1: Raoult's Law – For an ideal solution, the partial vapor pressure of each component is proportional to its mole fraction in the liquid phase and its vapor pressure as a pure component. This is expressed as:  $$P_{A} = X_{A} P_{A}^{\\circ}$$ and $$P_{B} = X_{B} P_{B}^{\\circ}$$ where \\(P_A\\) and \\(P_B\\) are the partial pressures of components A and B, \\(X_A\\) and \\(X_B\\) are their mole fractions in the liquid phase, and \\(P_A^{\\circ}\\) and \\(P_B^{\\circ}\\) are the vapor pressures of pure A and B respectively.",
+
+  "Step 2: Dalton's Law of Partial Pressures – The mole fraction of a component in the vapor phase is given by the ratio of its partial pressure to the total pressure: $$Y_{A} = \\frac{P_{A}}{P_{total}}$$ and $$Y_{B} = \\frac{P_{B}}{P_{total}}$$. From this, the ratio of vapor phase mole fractions is: $$\\frac{Y_{A}}{Y_{B}} = \\frac{P_{A}}{P_{B}}$$.",
+
+  "Step 3: Combining Raoult's and Dalton's Laws – By substituting the expressions from Raoult's Law into the ratio of vapor phase mole fractions, we get: $$\\frac{Y_{A}}{Y_{B}} = \\frac{X_{A} P_{A}^{\\circ}}{X_{B} P_{B}^{\\circ}}$$ which simplifies to $$\\frac{Y_{A}}{Y_{B}} = \\frac{X_{A}}{X_{B}} \\times \\frac{P_{A}^{\\circ}}{P_{B}^{\\circ}}$$.",
+
+  "Step 4: Applying the given condition – We are given that the vapor pressure of pure A is greater than that of pure B, i.e., \\(P_{A}^{\\circ} > P_{B}^{\\circ}\\). Therefore, the ratio \\(\\frac{P_{A}^{\\circ}}{P_{B}^{\\circ}} > 1\\).",
+
+  "Step 5: Conclusion – Since \\(\\frac{P_{A}^{\\circ}}{P_{B}^{\\circ}} > 1\\), it follows that: $$\\frac{Y_{A}}{Y_{B}} > \\frac{X_{A}}{X_{B}}$$. This means the mole fraction of A in the vapor phase is higher relative to B compared to their mole fractions in the liquid phase."
+]
   },
   {
     "id": "q14",
@@ -496,12 +620,34 @@ const Q = [
     ],
     "correct": "C",
     "solution": "Using Raoult's law for an ideal binary mixture, $P_{\\text{total}}=X_A P_A^0 + X_B P_B^0$ and $Y_A=\\dfrac{X_A P_A^0}{P_{\\text{total}}}$. One can rearrange to obtain $\\dfrac{1}{P_{\\text{total}}}=\\dfrac{Y_A}{X_A P_A^0}$, which (when $X_A$ and $Y_A$ vary together for ideal behaviour) yields a linear relation between $1/P_{\\text{total}}$ and $Y_A$. Hence (C) is correct.",
-    "solution_steps": [
-      "Step 1: For ideal binary mixture, Raoult's law gives $P_{\\text{total}}=X_A P_A^0 + X_B P_B^0$ (linear in $X_B$ but not in $1/X_B$).",
-      "Step 2: Vapour composition: $Y_A=\\dfrac{X_A P_A^0}{P_{\\text{total}}}$ ⇒ rearrange to $P_{\\text{total}}=\\dfrac{X_A P_A^0}{Y_A}$.",
-      "Step 3: Take reciprocal: $\\displaystyle\\frac{1}{P_{\\text{total}}}=\\frac{Y_A}{X_A P_A^0}$. As $X_A$ and $Y_A$ are related by Raoult's-law equilibrium for an ideal solution, the plot of $1/P_{\\text{total}}$ vs $Y_A$ is linear.",
-      "Step 4: Check other options quickly: (A) is false because $P_{\\text{total}}$ is linear in $X_B$ not in $1/X_B$. (B) is false because $P_{\\text{total}}$ vs $Y_A$ is not linear in general. (D) merely states non-linearity for $1/P_{\\text{total}}$ vs $Y_B$ which is not the canonical linear relation—so (C) is the correct choice."
-    ]
+    
+  "solution_steps": [
+    "(A) \\(P_{total}\\) vs \\(1/X_{B}\\)",
+    "Reason:",
+    "According to Raoult’s law, \\(P_{total}\\) is a linear function of \\(X_{B}\\). That means \\(P_{total}\\) increases or decreases in direct proportion to \\(X_{B}\\).",
+    "If you plot it against \\(1/X_{B}\\), you are plotting a linear function against the reciprocal of the variable, which makes the plot curved, not straight.",
+    "✔ So, this plot is nonlinear.",
+    "",
+    "(B) \\(P_{total}\\) vs \\(Y_{A}\\)",
+    "Reason:",
+    "Dalton’s law defines \\(Y_{A}\\) as a ratio involving partial pressures (\\(P_{A}/P_{total}\\)). As the composition changes, the relationship between total pressure and vapor composition becomes more complicated, involving divisions and nonlinear terms.",
+    "✔ Hence, this plot is nonlinear.",
+    "",
+    "(C) \\(1/P_{total}\\) vs \\(Y_{A}\\)",
+    "Reason:",
+    "Combining Raoult’s law (\\(P_{A} = X_{A} P_{A}^{\\circ}\\)) and Dalton’s law (\\(Y_{A} = P_{A}/P_{total}\\)) gives a formula where \\(1/P_{total}\\) is proportional to \\(Y_{A}\\). This makes the relationship linear because the complex dependencies cancel out under ideal assumptions.",
+    "✔ So, this plot is linear.",
+    "",
+    "(D) \\(1/P_{total}\\) vs \\(Y_{B}\\)",
+    "Reason:",
+    "Similar to option B, but involving \\(Y_{B}\\), which depends on \\(P_{B}\\) and the total pressure in a nonlinear way. The interactions between mole fractions and partial pressures are too complex for this plot to be linear.",
+    "✔ Thus, this plot is nonlinear.",
+    "",
+    "✅ Final Summary:",
+    "Linear plots occur only when the mathematical relationship between pressure and composition is directly proportional.",
+    "Nonlinear plots arise when the relationship involves divisions, reciprocals, or more complex dependencies between variables."
+  ]
+
   },
   {
     "id": "q15",
@@ -566,7 +712,18 @@ const quizTitle = document.title;
 /* === Start quiz === */
 function startQuiz() {
   const name = document.getElementById('studentNameInput').value.trim();
-  if (!name) { alert('Please enter your name.'); return; }
+  if (!name) { 
+    alert('Please enter your name.');
+    return;
+  }
+
+  // Check if the name is in the allowed list (case insensitive)
+  const isAllowed = allowedNames.some(allowed => allowed.toLowerCase() === name.toLowerCase());
+  if (!isAllowed) {
+    alert('Access denied! Your name is not register. Please contact your teacher # 08069409455.');
+    return;
+  }
+
   student = name;
   examDateTime = new Date().toLocaleString();
   document.getElementById('name-container').style.display = 'none';
@@ -576,92 +733,120 @@ function startQuiz() {
   startTimer();
 }
 
-/* === Build questions (shows Single/Multiple label) === */
+
+/* === Build questions === */
 function buildQuestions() {
   const out = document.getElementById('questions-container');
   out.innerHTML = '';
   Q.forEach((q, index) => {
-    const qText = q.text || q.question || '';
-    let entries = [];
-    if (Array.isArray(q.options)) {
-      entries = q.options.map((opt, i) => [String.fromCharCode(65 + i), opt]);
-    } else if (typeof q.options === 'object') {
-      // preserve A,B,C... order if present, otherwise use object keys
-      const keys = Object.keys(q.options);
-      entries = keys.map((k, i) => [k, q.options[k]]);
-    }
-
-    const correct = q.correct || q.answer;
+    const qText = q.text || '';
+    let entries = q.options.map((opt, i) => [String.fromCharCode(65 + i), opt]);
+    const correct = q.correct;
     const isMulti = Array.isArray(correct);
     const inputType = isMulti ? "checkbox" : "radio";
     const typeLabel = isMulti ? "Multiple Correct" : "Single Correct";
 
     const optionsHTML = entries.map(([letter, opt]) => {
-      return `<label class="option-item" for="${q.id}-${letter}">
+      return `<label class="option-item">
                 <input type="${inputType}" id="${q.id}-${letter}" name="${q.id}${isMulti ? '[]' : ''}" value="${letter}" onchange="enableSubmit('${q.id}')">
                 ${letter}. ${opt}
               </label>`;
     }).join('');
 
+    // ✅ Only add PPT button if pptUrl exists
+    const pptBtnHTML = q.pptUrl 
+      ? `<button class="ppt-button" id="ppt-${q.id}" onclick="openPPT('${q.pptUrl}')">📑 PPT Presentation</button>`
+      : "";
+
+    // ✅ Add image rendering if available
+    const imgHTML = q.image 
+      ? `<div style="margin:10px 0;"><img src="${q.image}" alt="Question Image"></div>` 
+      : "";
+
     out.insertAdjacentHTML('beforeend', `
       <div class="question" id="${q.id}-wrap">
         <h3>Q${index + 1}. ${qText}</h3>
+        ${imgHTML}  <!-- 👈 This will show images -->
         <div class="type-label">[${typeLabel}]</div>
-        ${q.image ? `<div><img src="${q.image}" style="max-width:360px; margin:10px 0;"></div>` : ''}
         <div class="options">${optionsHTML}</div>
         <div class="buttons" id="${q.id}-buttons">
           <button id="sub-${q.id}" class="submit-button" disabled onclick="grade('${q.id}')">Submit</button>
           <button class="dontknow-button" onclick="skip('${q.id}')">I Don’t Know</button>
         </div>
-        <button class="toggle-button" id="btn-sol-${q.id}" style="display:none;" onclick="toggleSolution('sol-${q.id}')">Show Solution</button>
-        <div class="solution" id="sol-${q.id}">
-          <strong>Solution:</strong> ${q.solution || ''}
-        </div>
+        <button class="toggle-button" id="btn-sol-${q.id}" style="display:none;" onclick="toggleSolution('sol-${q.id}','${q.id}')">Show Solution</button>
+       <div class="solution" id="sol-${q.id}">
+  <strong>Solution:</strong> ${q.solution || ''}
+  ${q.solution_steps ? q.solution_steps.map(step => `<p>${step}</p>`).join('') : ''}
+
+</div>
+
+        ${pptBtnHTML}
       </div>
     `);
   });
   if (window.MathJax && typeof MathJax.typesetPromise === 'function') MathJax.typesetPromise();
 }
 
-/* enable submit for that question once user interacts */
-function enableSubmit(qid){
-  const btn = document.getElementById(`sub-${qid}`);
-  if (btn) btn.disabled = false;
-}
 
-/* Grade single question when Submit clicked */
-function grade(qid){
+
+/* enable submit */
+function enableSubmit(qid){ document.getElementById(`sub-${qid}`).disabled = false; }
+
+/* open PPT */
+function openPPT(url){ window.open(url,"_blank"); }
+function showPPTButton(qid){ const b=document.getElementById(`ppt-${qid}`); if(b) b.style.display="inline-block"; }
+
+/* grade */
+function grade(qid) {
   const q = Q.find(x => x.id === qid);
-  const correct = q.correct || q.answer;
+  const correct = q.correct;
   const isMulti = Array.isArray(correct);
-  const inputs = document.querySelectorAll(`#${qid}-wrap input`);
-  inputs.forEach(i => i.disabled = true);
 
+  // disable all inputs
+  document.querySelectorAll(`#${qid}-wrap input`).forEach(i => i.disabled = true);
+
+  // show solution & PPT button
+  document.getElementById(`sol-${qid}`).style.display = 'block';
+  showPPTButton(qid);
+
+  // mark answers
   if (!isMulti) {
-    const chosen = document.querySelector(`input[name="${qid}"]:checked`);
-    if (chosen && chosen.value === correct) {
-      chosen.closest('label').style.background = '#28a745';
-      chosen.closest('label').style.color = '#fff';
-    } else if (chosen) {
-      chosen.closest('label').style.background = '#dc3545';
-      chosen.closest('label').style.color = '#fff';
-      const correctInput = document.querySelector(`input[name="${qid}"][value="${correct}"]`);
-      if (correctInput) { correctInput.closest('label').style.background = '#28a745'; correctInput.closest('label').style.color = '#fff'; }
+    const chosen = document.querySelector(`input[name="${q.id}"]:checked`);
+    if (chosen) {
+      if (chosen.value === correct) {
+        // correct
+        chosen.parentElement.classList.add("correct-option");
+      } else {
+        // wrong
+        chosen.parentElement.classList.add("wrong-option");
+        // highlight the right one
+        const right = document.getElementById(`${q.id}-${correct}`);
+        if (right) right.parentElement.classList.add("correct-option");
+      }
     }
   } else {
-    const selected = [...document.querySelectorAll(`#${qid}-wrap input:checked`)].map(x => x.value);
-    [...document.querySelectorAll(`#${qid}-wrap input`)].forEach(inp => {
-      if (correct.includes(inp.value)) inp.closest('label').style.background = '#28a745';
-      else if (inp.checked) inp.closest('label').style.background = '#dc3545';
+    // MSQ: multiple correct
+    const chosenVals = [...document.querySelectorAll(`#${q.id}-wrap input:checked`)].map(x => x.value);
+    chosenVals.forEach(val => {
+      if (correct.includes(val)) {
+        document.getElementById(`${q.id}-${val}`).parentElement.classList.add("correct-option");
+      } else {
+        document.getElementById(`${q.id}-${val}`).parentElement.classList.add("wrong-option");
+      }
+    });
+    correct.forEach(val => {
+      const el = document.getElementById(`${q.id}-${val}`);
+      if (el) el.parentElement.classList.add("correct-option");
     });
   }
 
-  document.getElementById(`sol-${qid}`).style.display = 'block';
+  // hide buttons
   const buttonsDiv = document.getElementById(`${qid}-buttons`);
   if (buttonsDiv) buttonsDiv.style.display = 'none';
 }
 
-/* Skip / I don't know behavior: clear selection, disable inputs, show solution button */
+
+/* skip */
 function skip(qid){
   document.querySelectorAll(`#${qid}-wrap input`).forEach(r => { r.checked = false; r.disabled = true; });
   showSolutionButton(qid);
@@ -672,11 +857,13 @@ function showSolutionButton(qid){
   const buttonsDiv = document.getElementById(`${qid}-buttons`);
   if (buttonsDiv) buttonsDiv.style.display = 'none';
 }
-function toggleSolution(id){
+function toggleSolution(id,qid){
   const e = document.getElementById(id);
   e.style.display = e.style.display === 'block' ? 'none' : 'block';
+  if (e.style.display === 'block') showPPTButton(qid);
 }
 
+/* timer, finalSubmit, print, shareOnWhatsApp, report handlers ... remain unchanged */
 /* Timer */
 function startTimer(){
   const display = document.getElementById('timer');
@@ -811,22 +998,43 @@ window.addEventListener('afterprint', () => {
 /* WhatsApp share */
 function shareOnWhatsApp(){
   const scoreText = document.getElementById('scoreText').innerText;
-  const msg = `📘 Quiz Title: ${quizTitle}\n👤 Student: ${student}\n\n${scoreText}`;
+  const details = [...document.querySelectorAll('#scoreDetails tr')].map(row => {
+    const cells = row.querySelectorAll('td');
+    return `Q${cells[0].innerText}: ${cells[1].innerText}\nYour Ans: ${cells[2].innerText}\nCorrect Ans: ${cells[3].innerText}\nResult: ${cells[4].innerText}\n`;
+  }).join('\n');
+
+  const msg = `📘 Quiz Title: ${quizTitle}\n👤 Student: ${student}\n\n${scoreText}\n\n${details}`;
   window.open(`https://wa.me/9108069409455?text=${encodeURIComponent(msg)}`, "_blank");
 }
+
 document.getElementById('shareWhatsappBtn').onclick = shareOnWhatsApp;
 
-/* Report modal handlers */
-document.getElementById('reportBtn').onclick = () => { document.getElementById('reportModal').style.display = "block"; }
-document.getElementById('closeReport').onclick = () => { document.getElementById('reportModal').style.display = "none"; }
-document.getElementById('sendReport').onclick = () => {
-  const msg = document.getElementById('reportMsg').value.trim();
-  if (!msg) { alert("Write message first"); return; }
-  const payload = `⚠️ Reported Mistake\nQuiz: ${quizTitle}\nStudent: ${student}\n\n${msg}`;
-  window.open(`https://wa.me/9108069409455?text=${encodeURIComponent(payload)}`, "_blank");
-  document.getElementById('reportModal').style.display = "none";
-  document.getElementById('reportMsg').value = "";
-};
+document.addEventListener('DOMContentLoaded', () => {
+  document.getElementById('sendReport').onclick = () => {
+    const msg = document.getElementById('reportMsg').value.trim();
+    if (!msg) { 
+      alert("Write message first"); 
+      return; 
+    }
+    if (!student) {
+      alert("Please start the quiz before reporting.");
+      return;
+    }
+    const payload = `⚠️ Reported Mistake / Have a Doubt\nQuiz: ${quizTitle}\nStudent: ${student}\n\n${msg}`;
+    window.open(`https://wa.me/9108069409455?text=${encodeURIComponent(payload)}`, "_blank");
+    document.getElementById('reportModal').style.display = "none";
+    document.getElementById('reportMsg').value = "";
+  };
+
+  document.getElementById('closeReport').onclick = () => {
+    document.getElementById('reportModal').style.display = "none";
+  };
+
+  document.getElementById('reportBtn').onclick = () => {
+    document.getElementById('reportModal').style.display = "block";
+  };
+});
+
 </script>
 </body>
 </html>
