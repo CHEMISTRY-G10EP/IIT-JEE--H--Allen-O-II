@@ -1,10 +1,11 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1"> <!-- Added for mobile responsiveness -->
 
-  <title> Quiz – _______________________________</title>
+  <title> Quiz – 1. A-II-Solution</title>
   
   <style>
     body {
@@ -186,24 +187,43 @@ mjx-container[jax="CHTML"][display="true"] {
   margin-right: auto !important;
 }
 
+.golden-line {
+  border: none;
+  border-top: 2px solid #FFD700; /* Golden color */
+  margin: 10px 0;
+}
+.step-title {
+  font-weight: bold;
+  color: #FFD700; /* Golden */
+  margin-top: 8px;
+}
+
+.step-content {
+  margin-left: 18px; /* Indent the explanation under each step */
+  margin-bottom: 6px;
+}
 
   </style>
 
   <!-- MathJax Configuration -->
   <script>
-    window.MathJax = {
-      tex: {
-        inlineMath: [['\\(','\\)'], ['$', '$']], 
-        displayMath: [['$$','$$'], ['\\[','\\]']],
-        processEscapes: true
-      },
-      options: { skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre'] }
-    };
-	const allowedNames = ["Gargi Mohan", "Joysmits", "Jiten", "Charlie", "David", "Eva"];  // Add more names here
-  </script>
- 
+   window.MathJax = {
+  tex: {
+    packages: {'[+]': ['ams']},  // needed for harpoons
+    inlineMath: [['\\(','\\)'], ['$', '$']],
+    displayMath: [['$$','$$'], ['\\[','\\]']],
+    processEscapes: true
+  },
+  options: { skipHtmlTags: ['script','noscript','style','textarea','pre'] }
+};
 
-  <script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+	const allowedNames = ["Gargi Mohan", "Raktutpaul kashyap","Ayman Ahmed","Joysmita", "Jiten", "Rondeep Kumai", "Rudranshu", "Swarndeep Paul"];  // Add more names here
+  </script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+
+
 </head>
 <body>
 
@@ -220,7 +240,7 @@ mjx-container[jax="CHTML"][display="true"] {
 
 <div id="quiz-container">
 
-  <h2> Quiz – _____________________________</h2>
+  <h2> Quiz – 1. A-II-Solution</h2>
   
   <p><strong>Time Elapsed:</strong> <span id="timer">00:00</span></p>
   <div id="questions-container"></div>
@@ -275,56 +295,29 @@ const Q = [
       "D) $0.173\\ \\mathrm{MeOH},\\ 0.827\\ \\mathrm{EtOH}$"
     ],
     "correct": "B",
-    "solution": "Using $y_{\\mathrm{MeOH}}=\\dfrac{p_{\\mathrm{MeOH}}}{p_{\\mathrm{MeOH}}+p_{\\mathrm{EtOH}}}=\\dfrac{2.619}{2.619+4.556}\\approx0.3650$, so vapour composition is $y_{\\mathrm{MeOH}}\\approx0.3650,\\;y_{\\mathrm{EtOH}}\\approx0.6350$.",
-       "solution_steps": [
-    "This problem asks to identify the solution with the highest boiling point, assuming each salt is 90% dissociated.",
-    "The boiling point elevation is directly proportional to the molality of the solution and the van't Hoff factor \\(i\\).",
-    "Since all solutions are decimolar, we need to compare the van't Hoff factor \\(i\\).",
-    "Step 1: Calculate the van't Hoff factor \\(i\\) for each salt.",
-    "The van't Hoff factor is calculated as",
-    "$$i = 1 + \\alpha (n - 1)$$ where",
-    "\\(\\alpha\\) is the degree of dissociation and",
-    "\\(n\\) is the number of ions produced per formula unit.",
-    "Given \\(\\alpha = 0.9\\).",
-    "(A) \\(\\text{Al}_2(\\text{SO}_4)_3\\):",
-    "$$n = 2(\\text{Al}^{3+}) + 3(\\text{SO}_4^{2-}) = 5$$",
-    "$$i = 1 + 0.9(5 - 1)$$",
-    "$$= 1 + 0.9 \\times 4$$",
-    "$$= 1 + 3.6$$",
-    "$$= 4.6$$",
-    "(B) \\(\\text{BaCl}_2\\):",
-    "$$n = 1(\\text{Ba}^{2+}) + 2(\\text{Cl}^{-}) = 3$$",
-    "$$i = 1 + 0.9(3 - 1)$$",
-    "$$= 1 + 0.9 \\times 2$$",
-    "$$= 1 + 1.8$$",
-    "$$= 2.8$$",
-    "(C) \\(\\text{Na}_2\\text{SO}_4\\):",
-    "$$n = 2(\\text{Na}^{+}) + 1(\\text{SO}_4^{2-}) = 3$$",
-    "$$i = 1 + 0.9(3 - 1)$$",
-    "$$= 1 + 0.9 \\times 2$$",
-    "$$= 1 + 1.8$$",
-    "$$= 2.8$$",
-    "(D) A solution obtained by mixing equal volumes of (B) and (C):",
-    "Since equal volumes are mixed and both (B) and (C) are decimolar, the resulting solution will contain half the concentration of \\(\\text{BaCl}_2\\) and half the concentration of \\(\\text{Na}_2\\text{SO}_4\\).",
-    "The total effective concentration will be the sum of the effective concentrations of \\(\\text{BaCl}_2\\) and \\(\\text{Na}_2\\text{SO}_4\\) in the mixture.",
-    "Note: For a mixture of equal volumes of two decimolar solutions, the effective van't Hoff factor will be the average of the individual van't Hoff factors (assuming similar densities and ideal mixing).",
-    "$$i_{\\text{mixture}} = \\frac{i_{\\text{BaCl}_2} + i_{\\text{Na}_2\\text{SO}_4}}{2}$$",
-    "$$= \\frac{2.8 + 2.8}{2}$$",
-    "$$= 2.8$$",
-    "Alternatively, consider the total number of ions.",
-    "If we mix equal volumes of \\(0.1\\, \\text{M}\\, \\text{BaCl}_2\\) and \\(0.1\\, \\text{M}\\, \\text{Na}_2\\text{SO}_4\\), the resulting solution will have \\(0.05\\, \\text{M}\\, \\text{BaCl}_2\\) and \\(0.05\\, \\text{M}\\, \\text{Na}_2\\text{SO}_4\\).",
-    "The total concentration of ions will be proportional to",
-    "$$0.05 \\times i_{\\text{BaCl}_2} + 0.05 \\times i_{\\text{Na}_2\\text{SO}_4} = 0.28$$",
-    "Compare the van't Hoff factors.",
-    "The solution with the highest van't Hoff factor will have the highest boiling point.",
-    "$$i_{\\text{Al}_2(\\text{SO}_4)_3} = 4.6$$",
-    "$$i_{\\text{BaCl}_2} = 2.8$$",
-    "$$i_{\\text{Na}_2\\text{SO}_4} = 2.8$$",
-    "$$i_{\\text{mixture}} = 2.8$$",
-    "Answer:",
-    "The correct option is (A) Decimolar \\(\\text{Al}_2(\\text{SO}_4)_3\\)."
+   "solution_steps": [
+    "Step 1: Understand the principle of vapor phase composition in ideal solutions.",
+    "For an ideal binary mixture, the mole fraction in the vapor phase ($y_i$) is determined by Dalton's Law of Partial Pressures:",
+    "$$y_1 = \\frac{p_1}{p_{\\text{total}}} = \\frac{p_1}{p_1 + p_2}, \\quad y_2 = \\frac{p_2}{p_{\\text{total}}} = \\frac{p_2}{p_1 + p_2}$$",
+    "In this problem, component 1 is methanol (MeOH) and component 2 is ethanol (EtOH).",
+    "Thus:",
+    "$$y_{\\text{MeOH}} = \\frac{p_{\\text{MeOH}}}{p_{\\text{MeOH}} + p_{\\text{EtOH}}}, \\quad y_{\\text{EtOH}} = \\frac{p_{\\text{EtOH}}}{p_{\\text{MeOH}} + p_{\\text{EtOH}}}$$",
+
+    "Step 2: Substitute the given values.",
+    "Partial vapor pressure of methanol: $p_{\\text{MeOH}} = 2.619\\,\\text{kPa}$",
+    "Partial vapor pressure of ethanol: $p_{\\text{EtOH}} = 4.556\\,\\text{kPa}$",
+    "Substitute into formula:",
+    "$$y_{\\text{MeOH}} = \\frac{2.619}{2.619 + 4.556}$$",
+
+    "Step 3: Calculate the total vapor pressure and mole fractions.",
+    "Total vapor pressure:",
+    "$$p_{\\text{total}} = 2.619 + 4.556 = 7.175\\,\\text{kPa}$$",
+    "Mole fraction of methanol in vapor phase:",
+    "$$y_{\\text{MeOH}} = \\frac{2.619}{7.175} \\approx 0.3650$$",
+    "Mole fraction of ethanol in vapor phase (since $y_{\\text{MeOH}} + y_{\\text{EtOH}} = 1$):",
+    "$$y_{\\text{EtOH}} = 1 - 0.3650 = 0.6350$$"
   ]
-  },
+},
   {
     "id": "q2",
     "text": "Molar volume of liquid A (density $d = 0.8\\ \\mathrm{g\\,mL^{-1}}$) increases by a factor of $2000$ when it vaporises at $T=200\\ \\mathrm{K}$. Vapour pressure of liquid A at $200\\ \\mathrm{K}$ is (use $R = 0.08\\ \\mathrm{L\\,atm\\,mol^{-1}\\,K^{-1}}$). (Molar mass of A = $80\\ \\mathrm{g\\,mol^{-1}}$)",
@@ -335,13 +328,28 @@ const Q = [
       "D) $0.08\\ \\mathrm{atm}$"
     ],
     "correct": "D",
-    "solution": "Liquid molar volume $V_\\ell=\\dfrac{M}{\\rho}=\\dfrac{80}{0.8}=100\\ \\mathrm{mL}=0.1\\ \\mathrm{L}$. Gas molar volume $V_g=2000\\times0.1=200\\ \\mathrm{L}$. By ideal gas law $P=\\dfrac{RT}{V}=\\dfrac{0.08\\times200}{200}=0.08\\ \\mathrm{atm}$.",
-    "solution_steps": [
-      "Step 1: Compute liquid molar volume: $\\displaystyle V_{\\ell}=\\frac{M}{\\rho}=\\frac{80\\ \\mathrm{g\\,mol^{-1}}}{0.8\\ \\mathrm{g\\,mL^{-1}}}=100\\ \\mathrm{mL\\,mol^{-1}}=0.1\\ \\mathrm{L\\,mol^{-1}}$.",
-      "Step 2: On vaporisation volume increases by factor 2000: $\\displaystyle V_g=2000\\times0.1\\ \\mathrm{L}=200\\ \\mathrm{L\\,mol^{-1}}$.",
-      "Step 3: Use ideal gas relation $\\displaystyle P=\\frac{RT}{V}$. So $\\displaystyle P=\\frac{0.08\\times200}{200}=0.08\\ \\mathrm{atm}$."
-    ]
-  },
+   "solution_steps": [
+    "Step 1: Compute the molar volume of liquid A.",
+    "The molar volume ($V_l$) is calculated using molar mass ($M$) and density ($d$):",
+    "$$V_l = \\frac{M}{d}$$",
+    "Substitute values:",
+    "$$V_l = \\frac{80\\, \\text{g mol}^{-1}}{0.8\\, \\text{g mL}^{-1}} = 100\\, \\text{mL mol}^{-1}$$",
+    "Convert to liters:",
+    "$$V_l = 100\\, \\text{mL mol}^{-1} = 0.1\\, \\text{L mol}^{-1}$$",
+
+    "Step 2: Determine the molar volume of gaseous A.",
+    "The problem states that the molar volume increases by a factor of 2000 upon vaporization:",
+    "$$V_g = 2000 \\times V_l = 2000 \\times 0.1 = 200\\, \\text{L mol}^{-1}$$",
+
+    "Step 3: Calculate the vapor pressure using the ideal gas law.",
+    "For 1 mole of gas, the ideal gas law is:",
+    "$$P = \\frac{RT}{V_g}$$",
+    "Substitute values:",
+    "$$P = \\frac{(0.08\\, \\text{L atm mol}^{-1}\\, \\text{K}^{-1})(200\\, \\text{K})}{200\\, \\text{L mol}^{-1}}$$",
+    "Simplify:",
+    "$$P = 0.08\\, \\text{atm}$$"
+  ]
+},
   {
     "id": "q3",
     "text": "Assuming each salt to be $90\\%$ dissociated, which of the following will have the highest boiling point? (A) Decimolar $\\mathrm{Al_2(SO_4)_3}$  (B) Decimolar $\\mathrm{BaCl_2}$  (C) Decimolar $\\mathrm{Na_2SO_4}$  (D) A solution obtained by mixing equal volumes of (B) and (C).",
@@ -353,16 +361,39 @@ const Q = [
     ],
     "correct": "A",
     "solution": "Boiling point elevation is proportional to $m\\times i$. For $c=0.1\\ \\mathrm{M}$ and $\\alpha=0.90$: $\\mathrm{Al_2(SO_4)_3}$ gives $i=1+(5-1)\\alpha=4.6$ so $c i=0.1\\times4.6=0.46$, the largest → (A).",
-    "solution_steps": [
-      "Step 1: For an electrolyte producing $n$ ions and degree of dissociation $\\alpha$, van't Hoff factor $i=1+(n-1)\\alpha$.",
-      "Step 2: Determine $n$ and $i$ for each (initial concentration $c=0.1\\ \\mathrm{M}$):",
-      "  * $\\mathrm{Al_2(SO_4)_3}\\to 2\\,\\mathrm{Al^{3+}}+3\\,\\mathrm{SO_4^{2-}}$ so $n=5$. Then $i=1+(5-1)\\times0.90=1+4\\times0.90=4.6$. Contribution $c\\,i=0.1\\times4.6=0.46$.",
-      "  * $\\mathrm{BaCl_2}\\to\\mathrm{Ba^{2+}}+2\\,\\mathrm{Cl^-}$ so $n=3$. Then $i=1+(3-1)\\times0.90=1+2\\times0.90=2.8$. Contribution $=0.1\\times2.8=0.28$.",
-      "  * $\\mathrm{Na_2SO_4}\\to2\\,\\mathrm{Na^+}+\\mathrm{SO_4^{2-}}$ so $n=3$, $i=2.8$. Contribution $=0.28$.",
-      "  * Mixing equal volumes of (B) and (C) halves concentrations to $0.05\\ \\mathrm{M}$ each. If no precipitation, total effective $c\\,i=0.05\\times2.8+0.05\\times2.8=0.28$ (same as single 0.1 M of BaCl_2 or Na_2SO_4).",
-      "Step 3: Compare: $0.46>0.28$ ⇒ highest boiling point is option (A) $\\mathrm{Al_2(SO_4)_3}$."
-    ]
-  },
+   "solution_steps": [
+    "Step 1: Recall the formula for boiling point elevation.",
+    "The elevation in boiling point is given by:",
+    "$$\\Delta T_b = i K_b m$$",
+    "Here, $i$ is the van't Hoff factor, $K_b$ is the molal elevation constant, and $m$ is the molality (or molar concentration $c$ for dilute solutions).",
+    "For partial dissociation, the van’t Hoff factor is:",
+    "$$i = 1 + (n-1)\\alpha$$",
+    "where $n$ is the number of ions formed per formula unit and $\\alpha$ is the degree of dissociation.",
+
+    "Step 2: Calculate $i$ for each salt (given $\\alpha = 0.90$).",
+    "For $\\text{Al}_2(\\text{SO}_4)_3$: $n = 5$ (2 Al$^{3+}$ + 3 SO$_4^{2-}$).",
+    "$$i = 1 + (5-1)(0.90) = 1 + 3.6 = 4.6$$",
+    "For BaCl$_2$: $n = 3$ (1 Ba$^{2+}$ + 2 Cl$^-$).",
+    "$$i = 1 + (3-1)(0.90) = 1 + 1.8 = 2.8$$",
+    "For Na$_2$SO$_4$: $n = 3$ (2 Na$^+$ + 1 SO$_4^{2-}$).",
+    "$$i = 1 + (3-1)(0.90) = 1 + 1.8 = 2.8$$",
+
+    "Step 3: Compute the effective concentration $c \\cdot i$ for each option (using $c = 0.1\\,\\text{M}$ for decimolar solutions).",
+    "Option (A): $0.1 \\times 4.6 = 0.46\\,\\text{M}$",
+    "Option (B): $0.1 \\times 2.8 = 0.28\\,\\text{M}$",
+    "Option (C): $0.1 \\times 2.8 = 0.28\\,\\text{M}$",
+    "Option (D): Mixing equal volumes of B and C → each concentration halves to $0.05\\,\\text{M}$.",
+    "$$c_{\\text{total}} i_{\\text{total}} = (0.05 \\times 2.8) + (0.05 \\times 2.8) = 0.14 + 0.14 = 0.28\\,\\text{M}$$",
+
+    "Step 4: Compare effective concentrations.",
+    "Option A: 0.46 M (highest).",
+    "Option B: 0.28 M.",
+    "Option C: 0.28 M.",
+    "Option D: 0.28 M.",
+
+    "Conclusion: The highest boiling point is for option (A) decimolar $\\text{Al}_2(\\text{SO}_4)_3$."
+  ]
+},
   {
     "id": "q4",
     "text": "The vapour pressure of a saturated solution of a sparingly soluble salt $\\mathrm{XCl_3}$ was $17.20\\ \\mathrm{mmHg}$ at $27^\\circ\\mathrm{C}$. If the vapour pressure of pure water is $17.25\\ \\mathrm{mmHg}$ at $300\\ \\mathrm{K}$, what is the solubility of $\\mathrm{XCl_3}$ in mol L$^{-1}$?",
@@ -428,12 +459,24 @@ const Q = [
     "correct": "B",
     "solution": "Liquid mole fractions: $x_{\\mathrm{pentane}}=\\dfrac{1}{1+4}=0.2$, $x_{\\mathrm{hexane}}=0.8$. By Raoult's law $p_{\\mathrm{pentane}}=0.2\\times440=88\\ \\mathrm{mmHg}$, $p_{\\mathrm{hexane}}=0.8\\times120=96\\ \\mathrm{mmHg}$. Vapour mole fraction $y_{\\mathrm{pentane}}=\\dfrac{88}{88+96}=\\dfrac{11}{23}\\approx0.4783$.",
     "solution_steps": [
-      "Step 1: Compute liquid mole fractions: $\\displaystyle x_{\\mathrm{pentane}}=\\frac{1}{1+4}=0.2$, $x_{\\mathrm{hexane}}=0.8$.",
-      "Step 2: Apply Raoult's law for partial pressures: $\\displaystyle p_{\\mathrm{pentane}}=x_{\\mathrm{pentane}}P^0_{\\mathrm{pentane}}=0.2\\times440=88\\ \\mathrm{mmHg}$,",
-      "  $\\displaystyle p_{\\mathrm{hexane}}=0.8\\times120=96\\ \\mathrm{mmHg}$.",
-      "Step 3: Vapour mole fraction of pentane: $\\displaystyle y_{\\mathrm{pentane}}=\\frac{p_{\\mathrm{pentane}}}{p_{\\mathrm{pentane}}+p_{\\mathrm{hexane}}}=\\frac{88}{88+96}=\\frac{88}{184}=\\frac{11}{23}\\approx0.4783$."
-    ]
-  },
+    "Step 1: Calculate mole fractions in the liquid phase.",
+    "Given mole ratio pentane : hexane = 1 : 4 → total moles = 1 + 4 = 5.",
+    "$$x_{\\text{pentane}} = \\frac{1}{5} = 0.2, \\quad x_{\\text{hexane}} = \\frac{4}{5} = 0.8$$",
+    
+    "Step 2: Use Raoult's law to find partial pressures.",
+    "Raoult's law: for each component, $$p_i = x_i P_i^{\\circ}$$ where $P_i^{\\circ}$ is the vapor pressure of the pure component.",
+    "Given: $P_{\\text{pentane}}^{\\circ} = 440\\ \\mathrm{mmHg}$ and $P_{\\text{hexane}}^{\\circ} = 120\\ \\mathrm{mmHg}$.",
+    "$$p_{\\text{pentane}} = 0.2 \\times 440 = 88\\ \\mathrm{mmHg}$$",
+    "$$p_{\\text{hexane}} = 0.8 \\times 120 = 96\\ \\mathrm{mmHg}$$",
+    
+    "Step 3: Compute total pressure and vapor-phase mole fraction of pentane.",
+    "Total vapor pressure: $$p_{\\text{total}} = p_{\\text{pentane}} + p_{\\text{hexane}} = 88 + 96 = 184\\ \\mathrm{mmHg}$$",
+    "Mole fraction of pentane in vapor phase: $$y_{\\text{pentane}} = \\frac{p_{\\text{pentane}}}{p_{\\text{total}}} = \\frac{88}{184}$$",
+    "$$y_{\\text{pentane}} \\approx 0.478$$",
+    
+    "Conclusion: The mole fraction of pentane in the vapor phase is approximately $$y_{\\text{pentane}} = 0.478\\ (\\text{or }47.8\\%).\""
+  ]
+},
   {
     "id": "q6",
     "text": "For which of the following van't Hoff's factors is the value NOT correctly matched? .",
@@ -445,14 +488,33 @@ const Q = [
     ],
     "correct": "D",
     "solution": "Van't Hoff factor $\\displaystyle i=1+(n-1)\\alpha$. For $\\mathrm{[Cr(NH_3)_5Cl]SO_4}$ the salt dissociates into two ions ($n=2$) so $i=1+(2-1)\\times0.90=1.90$, not $2.8$. Hence (D) is incorrect.",
-    "solution_steps": [
-      "Step 1: Formula: $\\displaystyle i=1+(n-1)\\alpha$, where $n$ is number of particles on full dissociation and $\\alpha$ is degree of dissociation.",
-      "Step 2 (A): $\\mathrm{Na_2SO_4\\to 2Na^++SO_4^{2-}}$, so $n=3$.", "With $\\alpha=0.50$, $\\displaystyle i=1+(3-1)\\times0.50=1+1=2.00$ → matches.",
-      "Step 3 (B): $\\mathrm{K_3[Fe(CN)_6]\\to 3K^++[Fe(CN)_6]^{3-}}$, so $n=4$.", "With $\\alpha=0.75$, $\\displaystyle i=1+(4-1)\\times0.75=1+2.25=3.25$ → matches.",
-      "Step 4 (C): $\\mathrm{[Ag(NH_3)_2]Cl\\to [Ag(NH_3)_2]^++Cl^-}$, so $n=2$.", "With $\\alpha=0.80$, $\\displaystyle i=1+(2-1)\\times0.80=1.80$ → matches.",
-      "Step 5 (D): $\\mathrm{[Cr(NH_3)_5Cl]SO_4\\to [Cr(NH_3)_5Cl]^{2+}+SO_4^{2-}}$, so $n=2$.", "With $\\alpha=0.90$, $\\displaystyle i=1+(2-1)\\times0.90=1.90$. The given $i=2.8$ is incorrect → option (D) is NOT correctly matched."
-    ]
-  },
+   "solution_steps": [
+    "Step 1: Understand the formula for van't Hoff factor.",
+    "The van't Hoff factor is given by: $i = 1 + (n-1)\\alpha$, where $n$ is the number of ions produced per formula unit on complete dissociation and $\\alpha$ is the degree of dissociation.",
+
+    "Step 2: Evaluate option (A) — Na$_2$SO$_4$, $\\alpha = 50\\%$, given $i = 2$.",
+    "Dissociation: Na$_2$SO$_4 \\to 2\\,\\text{Na}^+ + \\text{SO}_4^{2-}$ → $n = 3$.",
+    "Compute $i$: $i = 1 + (3-1)\\times 0.50 = 1 + 2\\times 0.50 = 1 + 1 = \\mathbf{2.00}$.",
+    "This matches the given value $i = 2$.",
+
+    "Step 3: Evaluate option (B) — K$_3$[Fe(CN)$_6$], $\\alpha = 75\\%$, given $i = 3.25$.",
+    "Dissociation: K$_3$[Fe(CN)$_6$] \\to 3\\,K^+ + [Fe(CN)_6]^{3-}$ → $n = 4$.",
+    "Compute $i$: $i = 1 + (4-1)\\times 0.75 = 1 + 3\\times 0.75 = 1 + 2.25 = \\mathbf{3.25}$.",
+    "This matches the given value $i = 3.25$.",
+
+    "Step 4: Evaluate option (C) — [Ag(NH$_3$)$_2$]Cl, $\\alpha = 80\\%$, given $i = 1.8$.",
+    "Dissociation: [Ag(NH$_3$)$_2$]Cl \\to [Ag(NH_3)_2]^+ + Cl^- → $n = 2$.",
+    "Compute $i$: $i = 1 + (2-1)\\times 0.80 = 1 + 1\\times 0.80 = 1 + 0.80 = \\mathbf{1.80}$.",
+    "This matches the given value $i = 1.8$.",
+
+    "Step 5: Evaluate option (D) — [Cr(NH$_3$)$_5$Cl]SO$_4$, $\\alpha = 90\\%$, given $i = 2.8$.",
+    "Dissociation (as written): [Cr(NH$_3$)$_5$Cl]SO$_4$ \\to [Cr(NH_3)_5Cl]^{2+} + SO_4^{2-} → $n = 2$.",
+    "Compute $i$: $i = 1 + (2-1)\\times 0.90 = 1 + 1\\times 0.90 = 1 + 0.90 = \\mathbf{1.90}$.",
+    "The calculated value $i = 1.90$ does NOT match the given value $i = 2.8$.",
+
+    "Final Answer: Option (D) is incorrectly matched. The correct van't Hoff factor for [Cr(NH$_3$)$_5$Cl]SO$_4$ with $\\alpha = 0.90$ is $i = 1.90$, not $2.8$."
+  ]
+},
   {
     "id": "q7",
     "text": "In the depression of freezing point experiment, it is found that:<br>(I) The vapour pressure of the solution is less than that of pure solvent.<br>(II) The vapour pressure of the solution is more than that of pure solvent.<br>(III) Only solute molecules solidify at the freezing point.<br>(IV) Only solvent molecules solidify at the freezing point.",
@@ -465,15 +527,26 @@ const Q = [
     ],
     "correct": "C",
     "solution": "(I) True, since vapour pressure of a solution is always lower than pure solvent. (II) False, vapour pressure is not higher. (III) False, solute does not solidify. (IV) True, only solvent molecules solidify at freezing point. Hence, correct: I and IV.",
-    "solution_steps": [
-      "Step 1: Depression of freezing point is a colligative property caused by lowering of vapour pressure of solution compared to pure solvent.",
-      "Step 2: (I) True — $P_{solution} < P_{solvent}$.",
-      "Step 3: (II) False — solution cannot have higher vapour pressure.",
-      "Step 4: (III) False — solute molecules remain in liquid, not in solid lattice.",
-      "Step 5: (IV) True — freezing involves crystallization of pure solvent molecules.",
-      "Step 6: Thus correct statements are (I) and (IV) → option (C)."
-    ]
-  },
+     "solution_steps": [
+    "Step 1: Analyze Statement (I) — \"The vapour pressure of the solution is less than that of pure solvent.\"",
+    "Explanation: For a solution containing a non-volatile solute, Raoult's law states that the partial vapor pressure of the solvent above the solution is $p = x_{\\text{solvent}}\\,p^\\circ_{\\text{solvent}}$, where $x_{\\text{solvent}}<1$ when solute is present. Therefore $p < p^\\circ_{\\text{solvent}}$.",
+    "Conclusion for (I): Correct.",
+
+    "Step 2: Analyze Statement (II) — \"The vapour pressure of the solution is more than that of pure solvent.\"",
+    "Explanation: This contradicts Raoult's law for a solution with a non-volatile solute. Presence of such a solute always lowers (never raises) the vapor pressure of the solvent compared to the pure solvent at the same temperature.",
+    "Conclusion for (II): Incorrect.",
+
+    "Step 3: Analyze Statement (III) — \"Only solute molecules solidify at the freezing point.\"",
+    "Explanation: In normal freezing (freezing-point depression) the solvent crystallizes out as the solid phase (pure solvent lattice); solute stays in the remaining liquid. The statement asserting only solute solidifies is not the typical case and is incorrect.",
+    "Conclusion for (III): Incorrect.",
+
+    "Step 4: Analyze Statement (IV) — \"Only solvent molecules solidify at the freezing point.\"",
+    "Explanation: For dilute solutions (no eutectic formation), freezing involves formation of the solvent's crystalline phase; the solute remains in the liquid and thus lowers the temperature at which the solvent solidifies. So in the ordinary freezing-point depression scenario, only solvent molecules solidify first.",
+    "Conclusion for (IV): Correct.",
+
+    "Final Answer: Statements (I) and (IV) are correct → option (C)."
+  ]
+},
   {
     "id": "q8",
     "text": "Statement-1: Addition of ethylene glycol (non-volatile) to water lowers the freezing point of water hence used as antifreeze. Statement-2: Addition of any substance to water lowers its freezing point.",
@@ -506,18 +579,29 @@ const Q = [
     "correct": "C",
     "solution": "From the phase diagram: (A) is true because B has higher boiling point and hence is less volatile. (B) is true — Raoult’s law and vapour-liquid equilibrium support this. (C) is incorrect because if $x_B=0.10$, $y_B$ is closer to ~0.20, not 0.40. (D) is incorrect because at 50% mole fraction the boiling point lies between 300K and 400K but not exactly 350K.",
     "solution_steps": [
-  "Step 1: The diagram represents a T-composition (temperature vs composition) phase diagram for a binary mixture of A and B. The lower curve is the liquid-phase curve that shows how the boiling point changes with the liquid composition \\(x_B\\), while the upper curve is the vapour-phase curve showing the vapour composition \\(y_B\\) at the same temperature.",
-  
-  "Step 2: Statement (A) claims that 'B is less volatile than A.' From the diagram, pure A boils at 300 K and pure B at 400 K. A lower boiling point means higher volatility, so A is more volatile than B, which makes this statement True.",
-  
-  "Step 3: Statement (B) says that 'If mole percent of A in liquid phase is 40% then mole percent of A in vapour phase is 50%.' Using \\(x_A = 0.40\\), we get \\(x_B = 1 - 0.40 = 0.60\\). By drawing a vertical line at \\(x_B = 0.60\\) up to the liquid curve and then a horizontal line to the vapour curve, we find that \\(y_B\\) is about 0.50. Therefore, \\(y_A = 1 - 0.50 = 0.50\\), confirming the statement is True.",
-  
-  "Step 4: Statement (C) says that 'If mole percent of B in liquid phase is 10% then mole percent of B in vapour phase is 40%.' Here, \\(x_B = 0.10\\), meaning B is a minor component. In systems where A is more volatile, the vapour is richer in A, hence \\(y_B\\) will be even less than \\(x_B\\), certainly not larger like 0.40. Thus, this statement is False.",
-  
-  "Step 5: Statement (D) says that 'If the mole percent of A in solution is 50% then its boiling point is 350 K.' With \\(x_A = 0.50\\), we get \\(x_B = 0.50\\). According to the diagram, at \\(x_B = 0.50\\), the boiling point from the liquid curve is exactly 350 K, confirming this statement is True.",
-  
-  "Step 6: Final conclusion — only statement (C) is inconsistent with the diagram. Statements (A), (B), and (D) are supported by the phase behaviour depicted in the diagram. Therefore, the correct answer is that only statement (C) is incorrect."
- ],
+    "Step 1: Analyze volatility from the T vs $X_B$ graph.",
+    "Pure A ($X_B = 0$) boils at $300\\ \\mathrm{K}$; pure B ($X_B = 1$) boils at $400\\ \\mathrm{K}$. Lower boiling point → higher volatility, so A is more volatile than B. Hence B is less volatile than A.",
+    
+    "Step 2: Evaluate statement (A) — \"B is less volatile than A.\"",
+    "From Step 1, B has higher boiling point ($400\\ \\mathrm{K}$) than A ($300\\ \\mathrm{K}$), so B is indeed less volatile than A.",
+    "Conclusion for (A): Correct.",
+    
+    "Step 3: Evaluate statement (B) — \"If mole percent of A in liquid phase is 40% then mole percent of A in vapour phase is 50%.\"",
+    "If mole percent of A in liquid is $40\\%$ → $X_A = 0.40$ so $X_B = 0.60$. At $X_B = 0.60$, read the liquid curve and then use the tie-line to the vapor curve. The vapor composition reads about $Y_B \\approx 0.50$, so $Y_A = 1 - Y_B \\approx 0.50$ (50%).",
+    "This matches the statement and is consistent with the vapor being enriched in the more volatile component A.",
+    "Conclusion for (B): Correct.",
+    
+    "Step 4: Evaluate statement (C) — \"If mole percent of B in liquid phase is 10% then mole percent of B in vapour phase is 40%.\"",
+    "If $X_B = 0.10$, locate $X_B = 0.10$ on the x-axis, go up to the liquid curve, draw the tie-line to the vapor curve and read $Y_B$. Visually $Y_B$ at $X_B = 0.10$ is much less than $0.40$ (closer to $\\approx 0.15\\text{–}0.20$), since B is the less volatile component and the vapor is depleted in B ($Y_B < X_B$).",
+    "Thus $Y_B = 0.40$ contradicts the graph.",
+    "Conclusion for (C): Incorrect.",
+    
+    "Step 5: Evaluate statement (D) — \"If mole percent of A in solution is 50% then its boiling point is 350 K.\"",
+    "If $X_A = 0.50$ → $X_B = 0.50$. At $X_B = 0.50$ the liquid-curve temperature is $350\\ \\mathrm{K}$ (read directly from the graph).",
+    "Conclusion for (D): Correct.",
+    
+    "Final Answer: Statement (C) is incorrect. (Incorrect statement: (C))."
+  ],
     "pptUrl": "https://gten-educational-platform.github.io/my-scorm-course/Course2/res/index.html"
   },
   {
@@ -532,19 +616,25 @@ const Q = [
     ],
     "correct": "D",
     "solution": "At point Z, the mixture corresponds to an azeotrope. For azeotropes, distillate composition is the same as liquid composition (so A is false), boiling point is fixed (so B is false), and vapour pressure is not minimum for all compositions (so C is false). The correct fact is that azeotropic composition depends on external pressure, hence (D).",
-    "solution_steps": [
-  "Step 1: Analyze the provided diagram and identify point Z. The image shows a temperature-composition phase diagram for a binary liquid mixture. The x-axis represents the mole fraction (\\(x_A\\) for the liquid phase, \\(y_A\\) for the vapor phase), and the y-axis represents the temperature. Point Z is located at the intersection of the liquid and vapor phase curves, where the composition of the liquid phase (\\(x_A\\)) is equal to the composition of the vapor phase (\\(y_A\\)). This point represents an azeotropic mixture, specifically a minimum boiling azeotrope, because the temperature at point Z is lower than the boiling points of the pure components where \\(x_A = 0\\) or \\(x_A = 1\\).",
+"solution_steps": [
+    "Step 1: Interpret point Z on the T vs composition plot.",
+    "Point Z is where the liquid and vapor composition curves meet at a minimum boiling temperature — this is a minimum-boiling azeotrope. At Z the liquid and vapor have the same composition and the mixture boils at a constant temperature (like a pure substance).",
 
-  "Step 2: Understand the properties of an azeotrope during distillation. An azeotrope is a constant-boiling mixture that distills without a change in composition, meaning the composition of the distillate is the same as the liquid mixture. This occurs because at the azeotropic point, the liquid and vapor phases have the same composition, hence no separation occurs during distillation.",
+    "Step 2: Evaluate statement (A) — \"The composition of distillate differs from the mixture.\"",
+    "At an azeotrope the vapour and liquid compositions are identical, so on simple distillation the distillate has the same composition as the boiling liquid. Therefore statement (A) is incorrect.",
 
-  "Step 3: Evaluate the given statements based on the properties of an azeotrope. Statement (A): 'The composition of distillate differs from the mixture.' This is incorrect because an azeotrope distills without change in composition; both the liquid and vapor phases have the same composition at the azeotropic point.",
+    "Step 3: Evaluate statement (B) — \"The boiling point goes on changing.\"",
+    "Azeotropes are constant-boiling mixtures. While distilling exactly at the azeotropic composition the temperature remains constant. Thus statement (B) is incorrect.",
 
-  "Step 4: Statement (B): 'The boiling point goes on changing.' This is incorrect because an azeotrope is a constant-boiling mixture, meaning its boiling point remains constant during distillation, similar to a pure substance, regardless of the amount being distilled.",
+    "Step 4: Evaluate statement (C) — \"The mixture has lowest vapour pressure than for any other composition.\"",
+    "A minimum-boiling azeotrope corresponds to a minimum boiling temperature (maximum vapour pressure at that temperature) rather than a minimum vapour pressure. So the claim that it has the lowest vapour pressure is false. Statement (C) is incorrect.",
 
-  "Step 5: Statement (C): 'The mixture has lowest vapor pressure than for any other composition.' This is incorrect. A minimum boiling azeotrope, like the one at point Z, actually exhibits maximum vapor pressure at that composition compared to other compositions at the same temperature. Only a maximum boiling azeotrope would have the lowest vapor pressure.",
+    "Step 5: Evaluate statement (D) — \"Composition of an azeotrope alters on changing the external pressure.\"",
+    "The azeotropic composition and boiling temperature depend on external pressure; changing pressure typically shifts the azeotropic point (both composition and temperature). This is exploited in pressure-swing azeotropic distillation. Therefore statement (D) is correct.",
 
-  "Step 6: Statement (D): 'Composition of an azeotrope alters on changing the external pressure.' This is correct because the azeotropic composition and boiling point depend on the external pressure. By changing the pressure, the azeotropic point shifts, resulting in a different composition and boiling temperature."
- ],
+    "Final conclusion: Only statement (D) is correct."
+  
+],
     "pptUrl": "https://gten-educational-platform.github.io/my-scorm-course/Course3/res/index.html"
   },
   {
@@ -558,13 +648,33 @@ const Q = [
     ],
     "correct": ["A","B","C","D"],
     "solution": "Negative deviation means stronger intermolecular attraction in the mixture compared to pure components. Hence enthalpy change $\\Delta H_{mix}$ is negative, volume change $\\Delta V_{mix}$ is negative, entropy change $\\Delta S_{mix}$ is positive (due to mixing), and free energy change $\\Delta G_{mix}$ is negative (spontaneous mixing).",
-    "solution_steps": [
-      "Step 1: For negative deviation: stronger interactions form → release of energy → $\\Delta H_{mix} < 0$ → (A) correct.",
-      "Step 2: Stronger interactions → closer packing → $\\Delta V_{mix} < 0$ → (B) correct.",
-      "Step 3: Mixing always increases disorder → $\\Delta S_{mix} > 0$ → (C) correct.",
-      "Step 4: Spontaneous process → $\\Delta G_{mix} < 0$ → (D) correct.",
-      "Step 5: Hence all (A, B, C, D) are correct."
-    ]
+   "solution_steps": [
+    "Step 1: Recap — negative deviation from Raoult's law means A–B attractions > average of A–A and B–B attractions.",
+    "This stronger unlike-molecule attraction is the physical origin of the thermodynamic signs given below.",
+
+    "Step 2: Evaluate Statement (A) — \"$\\Delta H_{mix} = $ negative\".",
+    "When A and B mix and stronger A–B interactions form, energy is released → mixing is exothermic.",
+    "Therefore $\\Delta H_{mix} < 0$ (negative).",
+    "Conclusion for (A): Correct.",
+
+    "Step 3: Evaluate Statement (B) — \"$\\Delta V_{mix} = $ negative\".",
+    "Stronger A–B interactions often allow molecules to pack more efficiently than in pure components; occupied volume decreases on mixing.",
+    "Hence $\\Delta V_{mix} < 0$ (negative) is expected for many systems with negative deviation.",
+    "Conclusion for (B): Correct (in typical cases of negative deviation).",
+
+    "Step 4: Evaluate Statement (C) — \"$\\Delta S_{mix} = $ positive\".",
+    "Mixing two different species increases configurational disorder (more ways to arrange A and B) so entropy increases.",
+    "Thus $\\Delta S_{mix} > 0$ (positive) for ideal and most non-ideal spontaneous mixing processes.",
+    "Conclusion for (C): Correct.",
+
+    "Step 5: Evaluate Statement (D) — \"$\\Delta G_{mix} = $ negative\".",
+    "Gibbs free energy of mixing is $\\Delta G_{mix} = \\Delta H_{mix} - T\\Delta S_{mix}$.",
+    "With $\\Delta H_{mix}<0$ and $\\Delta S_{mix}>0$, both terms favor a negative $\\Delta G_{mix}$, so mixing is spontaneous.",
+    "Therefore $\\Delta G_{mix} < 0$ (negative).",
+    "Conclusion for (D): Correct.",
+
+    "Final summary: For a non-ideal solution showing negative deviation (strong A–B attractions), all four statements (A), (B), (C) and (D) are correct in the usual/typical scenario described."
+  ]
   },
   {
     "id": "q12",
@@ -579,12 +689,30 @@ const Q = [
     "correct": "C",
     "solution": "Effective concentration is given by osmolarity = molarity × van’t Hoff factor $i$. For NaCl, $i=2$, so osmolarity = $0.1 \\times 2 = 0.20$ M. For BaCl$_2$, $i=3$, so osmolarity = $0.08 \\times 3 = 0.24$ M. Since $S_2$ has higher osmolarity, it is hypertonic, while $S_1$ is hypotonic. Osmosis will occur from $S_1$ to $S_2$.",
     "solution_steps": [
-      "Step 1: For NaCl: $\\mathrm{NaCl \\to Na^+ + Cl^-}$, $i=2$. Osmolarity = $0.1 \\times 2 = 0.20$ M.",
-      "Step 2: For BaCl$_2$: $\\mathrm{BaCl_2 \\to Ba^{2+} + 2Cl^-}$, $i=3$. Osmolarity = $0.08 \\times 3 = 0.24$ M.",
-      "Step 3: Since $0.24 > 0.20$, $S_2$ is hypertonic, $S_1$ is hypotonic.",
-      "Step 4: Osmosis occurs from dilute ($S_1$) to concentrated ($S_2$).",
-      "Step 5: Correct option is (C)."
-    ]
+    "Step 1: Calculate osmolarity of $S_1$ (0.1 M NaCl).",
+    "NaCl dissociates into Na⁺ and Cl⁻ → 2 ions, so van't Hoff factor $i = 2$.",
+    "Osmolarity $= 0.1 \\text{ M} \\times 2 = 0.20 \\text{ M}$.",
+
+    "Step 2: Calculate osmolarity of $S_2$ (0.08 M BaCl$_2$).",
+    "BaCl$_2$ dissociates into Ba²⁺ + 2Cl⁻ → 3 ions, so van't Hoff factor $i = 3$.",
+    "Osmolarity $= 0.08 \\text{ M} \\times 3 = 0.24 \\text{ M}$.",
+
+    "Step 3: Compare osmolarities to determine tonicity.",
+    "Since osmolarity of $S_2$ (0.24 M) > $S_1$ (0.20 M),",
+    "$S_2$ is hypertonic relative to $S_1$, and $S_1$ is hypotonic relative to $S_2$.",
+
+    "Step 4: Determine direction of osmosis.",
+    "Osmosis occurs from hypotonic solution → hypertonic solution.",
+    "Thus, water will move from $S_1$ (hypotonic) to $S_2$ (hypertonic).",
+
+    "Step 5: Analyze the given options.",
+    "A) $S_1$ and $S_2$ are isotonic — Incorrect (osmolarities differ).",
+    "B) $S_1$ is hypertonic and $S_2$ is hypotonic — Incorrect (reverse is true).",
+    "C) $S_1$ is hypotonic and $S_2$ is hypertonic — Correct.",
+    "D) Osmosis will take place from $S_1$ to $S_2$ — Factually correct, but (C) explains the underlying reason.",
+
+    "Final summary: The correct choice is (C) — $S_1$ is hypotonic and $S_2$ is hypertonic, which also explains that osmosis will occur from $S_1$ to $S_2$."
+  ]
   },
   {
     "id": "q13",
@@ -597,17 +725,41 @@ const Q = [
     ],
     "correct": "D",
     "solution": "According to Raoult’s law: $P_A = X_A P_A^0$, $P_B = X_B P_B^0$. Since $P_A^0 > P_B^0$, component A is more volatile and enriches in vapour phase, so $Y_A > X_A$. This leads to $\\dfrac{Y_A}{Y_B} > \\dfrac{X_A}{X_B}$.",
-    "solution_steps": [
-  "Step 1: Raoult's Law – For an ideal solution, the partial vapor pressure of each component is proportional to its mole fraction in the liquid phase and its vapor pressure as a pure component. This is expressed as:  $$P_{A} = X_{A} P_{A}^{\\circ}$$ and $$P_{B} = X_{B} P_{B}^{\\circ}$$ where \\(P_A\\) and \\(P_B\\) are the partial pressures of components A and B, \\(X_A\\) and \\(X_B\\) are their mole fractions in the liquid phase, and \\(P_A^{\\circ}\\) and \\(P_B^{\\circ}\\) are the vapor pressures of pure A and B respectively.",
+   "solution_steps": [
+    "Step 1: Recall Raoult's Law for ideal solutions.",
+    "Partial vapor pressure of a component A: $P_A = X_A P_A^0$,",
+    "Partial vapor pressure of component B: $P_B = X_B P_B^0$.",
+    "Significance: This quantifies each component's contribution to total vapor pressure based on its mole fraction and inherent volatility.",
 
-  "Step 2: Dalton's Law of Partial Pressures – The mole fraction of a component in the vapor phase is given by the ratio of its partial pressure to the total pressure: $$Y_{A} = \\frac{P_{A}}{P_{total}}$$ and $$Y_{B} = \\frac{P_{B}}{P_{total}}$$. From this, the ratio of vapor phase mole fractions is: $$\\frac{Y_{A}}{Y_{B}} = \\frac{P_{A}}{P_{B}}$$.",
+    "Step 2: Recall Dalton's Law of Partial Pressures.",
+    "Mole fraction in vapor phase: $Y_A = \\frac{P_A}{P_{total}}, \\quad Y_B = \\frac{P_B}{P_{total}}$.",
+    "Significance: Relates partial pressures to vapor-phase composition, essential for vapor-liquid equilibrium.",
 
-  "Step 3: Combining Raoult's and Dalton's Laws – By substituting the expressions from Raoult's Law into the ratio of vapor phase mole fractions, we get: $$\\frac{Y_{A}}{Y_{B}} = \\frac{X_{A} P_{A}^{\\circ}}{X_{B} P_{B}^{\\circ}}$$ which simplifies to $$\\frac{Y_{A}}{Y_{B}} = \\frac{X_{A}}{X_{B}} \\times \\frac{P_{A}^{\\circ}}{P_{B}^{\\circ}}$$.",
+    "Step 3: Express vapor phase composition ratio.",
+    "Using Dalton's Law: $\\frac{Y_A}{Y_B} = \\frac{P_A/P_{total}}{P_B/P_{total}}$.",
+    "Simplify: $\\frac{Y_A}{Y_B} = \\frac{P_A}{P_B}$ --- (Equation 1).",
+    "Explanation: Ratio of mole fractions in vapor equals ratio of partial pressures.",
 
-  "Step 4: Applying the given condition – We are given that the vapor pressure of pure A is greater than that of pure B, i.e., \\(P_{A}^{\\circ} > P_{B}^{\\circ}\\). Therefore, the ratio \\(\\frac{P_{A}^{\\circ}}{P_{B}^{\\circ}} > 1\\).",
+    "Step 4: Substitute Raoult's Law into Equation 1.",
+    "$\\frac{Y_A}{Y_B} = \\frac{X_A P_A^0}{X_B P_B^0}$ --- (Equation 2).",
+    "Explanation: Links vapor-phase composition to liquid-phase composition and pure component vapor pressures.",
 
-  "Step 5: Conclusion – Since \\(\\frac{P_{A}^{\\circ}}{P_{B}^{\\circ}} > 1\\), it follows that: $$\\frac{Y_{A}}{Y_{B}} > \\frac{X_{A}}{X_{B}}$$. This means the mole fraction of A in the vapor phase is higher relative to B compared to their mole fractions in the liquid phase."
-]
+    "Step 5: Rearrange Equation 2 to isolate pure vapor pressure ratio.",
+    "$\\frac{Y_A}{Y_B} = \\left( \\frac{X_A}{X_B} \\right) \\times \\left( \\frac{P_A^0}{P_B^0} \\right)$ --- (Equation 3).",
+    "Explanation: Shows how vapor-phase enrichment depends on liquid composition and relative volatilities.",
+
+    "Step 6: Apply given condition $P_A^0 > P_B^0$.",
+    "Interpretation: Component A is more volatile than B; tendency to enter vapor is higher.",
+    "Consequence: $\\frac{P_A^0}{P_B^0} > 1$.",
+
+    "Step 7: Final inequality for vapor vs liquid composition.",
+    "Substitute into Equation 3: $\\frac{Y_A}{Y_B} = \\left( \\frac{X_A}{X_B} \\right) \\times (\\text{value > 1})$.",
+    "Therefore: $\\frac{Y_A}{Y_B} > \\frac{X_A}{X_B}$.",
+
+    "Step 8: Significance of the result.",
+    "The vapor phase is enriched in the more volatile component (A) compared to the liquid phase.",
+    "This principle underlies distillation processes, separating components based on differences in volatility."
+  ]
   },
   {
     "id": "q14",
@@ -622,30 +774,33 @@ const Q = [
     "solution": "Using Raoult's law for an ideal binary mixture, $P_{\\text{total}}=X_A P_A^0 + X_B P_B^0$ and $Y_A=\\dfrac{X_A P_A^0}{P_{\\text{total}}}$. One can rearrange to obtain $\\dfrac{1}{P_{\\text{total}}}=\\dfrac{Y_A}{X_A P_A^0}$, which (when $X_A$ and $Y_A$ vary together for ideal behaviour) yields a linear relation between $1/P_{\\text{total}}$ and $Y_A$. Hence (C) is correct.",
     
   "solution_steps": [
-    "(A) \\(P_{total}\\) vs \\(1/X_{B}\\)",
-    "Reason:",
-    "According to Raoult’s law, \\(P_{total}\\) is a linear function of \\(X_{B}\\). That means \\(P_{total}\\) increases or decreases in direct proportion to \\(X_{B}\\).",
-    "If you plot it against \\(1/X_{B}\\), you are plotting a linear function against the reciprocal of the variable, which makes the plot curved, not straight.",
-    "✔ So, this plot is nonlinear.",
-    "",
-    "(B) \\(P_{total}\\) vs \\(Y_{A}\\)",
-    "Reason:",
-    "Dalton’s law defines \\(Y_{A}\\) as a ratio involving partial pressures (\\(P_{A}/P_{total}\\)). As the composition changes, the relationship between total pressure and vapor composition becomes more complicated, involving divisions and nonlinear terms.",
-    "✔ Hence, this plot is nonlinear.",
-    "",
-    "(C) \\(1/P_{total}\\) vs \\(Y_{A}\\)",
-    "Reason:",
-    "Combining Raoult’s law (\\(P_{A} = X_{A} P_{A}^{\\circ}\\)) and Dalton’s law (\\(Y_{A} = P_{A}/P_{total}\\)) gives a formula where \\(1/P_{total}\\) is proportional to \\(Y_{A}\\). This makes the relationship linear because the complex dependencies cancel out under ideal assumptions.",
-    "✔ So, this plot is linear.",
-    "",
-    "(D) \\(1/P_{total}\\) vs \\(Y_{B}\\)",
-    "Reason:",
-    "Similar to option B, but involving \\(Y_{B}\\), which depends on \\(P_{B}\\) and the total pressure in a nonlinear way. The interactions between mole fractions and partial pressures are too complex for this plot to be linear.",
-    "✔ Thus, this plot is nonlinear.",
-    "",
-    "✅ Final Summary:",
-    "Linear plots occur only when the mathematical relationship between pressure and composition is directly proportional.",
-    "Nonlinear plots arise when the relationship involves divisions, reciprocals, or more complex dependencies between variables."
+    "Step 1: Recall assumptions for ideal binary mixture.",
+    "Raoult's Law: $P_A = X_A P_A^0$, $P_B = X_B P_B^0$.",
+    "Dalton's Law: $P_{total} = P_A + P_B$.",
+    "Vapor phase mole fractions: $Y_A = \\frac{P_A}{P_{total}}$, $Y_B = \\frac{P_B}{P_{total}}$.",
+    "Mole fractions: $X_A + X_B = 1$, $Y_A + Y_B = 1$.",
+
+    "Step 2: Analyze option (A) — Plot of $P_{total}$ vs $1/X_B$.",
+    "Substitute $X_A = 1 - X_B$ into $P_{total}$: $P_{total} = (1-X_B)P_A^0 + X_B P_B^0 = P_A^0 + X_B(P_B^0 - P_A^0)$.",
+    "This shows $P_{total}$ is linear in $X_B$, but plotting vs $1/X_B$ would produce a non-linear curve.",
+    "Conclusion: (A) is incorrect.",
+
+    "Step 3: Analyze option (B) — Plot of $P_{total}$ vs $Y_A$.",
+    "From $Y_A = P_A / P_{total} = X_A P_A^0 / P_{total}$, we get $X_A = Y_A P_{total} / P_A^0$ and $X_B = Y_B P_{total} / P_B^0$.",
+    "Since $X_A + X_B = 1$, $P_{total} \\left( \\frac{Y_A}{P_A^0} + \\frac{Y_B}{P_B^0} \\right) = 1$.",
+    "Substitute $Y_B = 1 - Y_A$: $P_{total} = \\frac{1}{\\frac{Y_A}{P_A^0} + \\frac{1-Y_A}{P_B^0}}$.",
+    "This is a non-linear function of $Y_A$.",
+    "Conclusion: (B) is incorrect.",
+
+    "Step 4: Analyze option (C) — Plot of $1/P_{total}$ vs $Y_A$.",
+    "From previous step: $\\frac{1}{P_{total}} = \\frac{Y_A}{P_A^0} + \\frac{1-Y_A}{P_B^0} = Y_A \\left( \\frac{1}{P_A^0} - \\frac{1}{P_B^0} \\right) + \\frac{1}{P_B^0}$.",
+    "This is in the form $y = mx + c$ with $y = 1/P_{total}$, $x = Y_A$, slope $m = 1/P_A^0 - 1/P_B^0$, intercept $c = 1/P_B^0$.",
+    "Conclusion: (C) is correct — the plot is linear.",
+
+    "Step 5: Analyze option (D) — Plot of $1/P_{total}$ vs $Y_B$.",
+    "Substitute $Y_A = 1 - Y_B$: $\\frac{1}{P_{total}} = \\frac{1-Y_B}{P_A^0} + \\frac{Y_B}{P_B^0} = Y_B \\left( \\frac{1}{P_B^0} - \\frac{1}{P_A^0} \\right) + \\frac{1}{P_A^0}$.",
+    "This is also in the linear form $y = mx + c$.",
+    "Conclusion: (D) is incorrect — the plot is linear, not non-linear."
   ]
 
   },
@@ -763,26 +918,33 @@ function buildQuestions() {
       ? `<div style="margin:10px 0;"><img src="${q.image}" alt="Question Image"></div>` 
       : "";
 
-    out.insertAdjacentHTML('beforeend', `
-      <div class="question" id="${q.id}-wrap">
-        <h3>Q${index + 1}. ${qText}</h3>
-        ${imgHTML}  <!-- 👈 This will show images -->
-        <div class="type-label">[${typeLabel}]</div>
-        <div class="options">${optionsHTML}</div>
-        <div class="buttons" id="${q.id}-buttons">
-          <button id="sub-${q.id}" class="submit-button" disabled onclick="grade('${q.id}')">Submit</button>
-          <button class="dontknow-button" onclick="skip('${q.id}')">I Don’t Know</button>
-        </div>
-        <button class="toggle-button" id="btn-sol-${q.id}" style="display:none;" onclick="toggleSolution('sol-${q.id}','${q.id}')">Show Solution</button>
-       <div class="solution" id="sol-${q.id}">
-  <strong>Solution:</strong> ${q.solution || ''}
-  ${q.solution_steps ? q.solution_steps.map(step => `<p>${step}</p>`).join('') : ''}
+out.insertAdjacentHTML('beforeend', `
+  <div class="question" id="${q.id}-wrap">
+    <h3>Q${index + 1}. ${qText}</h3>
+    ${imgHTML}
+    <div class="type-label">[${typeLabel}]</div>
+    <div class="options">${optionsHTML}</div>
+    <div class="buttons" id="${q.id}-buttons">
+      <button id="sub-${q.id}" class="submit-button" disabled onclick="grade('${q.id}')">Submit</button>
+      <button class="dontknow-button" onclick="skip('${q.id}')">I Don’t Know</button>
+      <button class="toggle-button" id="btn-sol-${q.id}" style="display:none;" onclick="toggleSolution('sol-${q.id}','${q.id}')">Show Solution</button>
+    </div>
 
-</div>
+    <div class="solution" id="sol-${q.id}">
+      <strong>Solution:</strong> ${q.solution || ''}
+      ${q.solution_steps 
+        ? `<hr class="golden-line"><strong>Solution Steps:</strong>` + 
+          q.solution_steps.map(step => 
+            /^Step\s*\d+/i.test(step) 
+              ? `<p class="step-title">${step}</p>` 
+              : `<p class="step-content">${step}</p>`
+          ).join('') 
+        : '' }
+    </div>
 
-        ${pptBtnHTML}
-      </div>
-    `);
+    ${pptBtnHTML}
+  </div>
+`);
   });
   if (window.MathJax && typeof MathJax.typesetPromise === 'function') MathJax.typesetPromise();
 }
@@ -805,8 +967,10 @@ function grade(qid) {
   // disable all inputs
   document.querySelectorAll(`#${qid}-wrap input`).forEach(i => i.disabled = true);
 
-  // show solution & PPT button
-  document.getElementById(`sol-${qid}`).style.display = 'block';
+  // ✅ show "Show Solution" button instead of auto-opening solution
+  showSolutionButton(qid);
+
+  // ✅ still show PPT button
   showPPTButton(qid);
 
   // mark answers
@@ -814,49 +978,71 @@ function grade(qid) {
     const chosen = document.querySelector(`input[name="${q.id}"]:checked`);
     if (chosen) {
       if (chosen.value === correct) {
-        // correct
         chosen.parentElement.classList.add("correct-option");
       } else {
-        // wrong
         chosen.parentElement.classList.add("wrong-option");
-        // highlight the right one
         const right = document.getElementById(`${q.id}-${correct}`);
         if (right) right.parentElement.classList.add("correct-option");
       }
     }
   } else {
-    // MSQ: multiple correct
-    const chosenVals = [...document.querySelectorAll(`#${q.id}-wrap input:checked`)].map(x => x.value);
-    chosenVals.forEach(val => {
-      if (correct.includes(val)) {
-        document.getElementById(`${q.id}-${val}`).parentElement.classList.add("correct-option");
-      } else {
-        document.getElementById(`${q.id}-${val}`).parentElement.classList.add("wrong-option");
-      }
+    // multi-correct marking
+    const chosen = Array.from(document.querySelectorAll(`input[name="${q.id}"]:checked`)).map(i => i.value);
+    correct.forEach(c => {
+      const right = document.getElementById(`${q.id}-${c}`);
+      if (right) right.parentElement.classList.add("correct-option");
     });
-    correct.forEach(val => {
-      const el = document.getElementById(`${q.id}-${val}`);
-      if (el) el.parentElement.classList.add("correct-option");
+    chosen.forEach(c => {
+      if (!correct.includes(c)) {
+        const wrong = document.getElementById(`${q.id}-${c}`);
+        if (wrong) wrong.parentElement.classList.add("wrong-option");
+      }
     });
   }
 
-  // hide buttons
-  const buttonsDiv = document.getElementById(`${qid}-buttons`);
-  if (buttonsDiv) buttonsDiv.style.display = 'none';
+  // disable submit button after grading
+  document.getElementById(`sub-${qid}`).disabled = true;
 }
+
 
 
 /* skip */
-function skip(qid){
-  document.querySelectorAll(`#${qid}-wrap input`).forEach(r => { r.checked = false; r.disabled = true; });
+function skip(qid) {
+  const q = Q.find(x => x.id === qid);
+  const correct = q.correct;
+  const isMulti = Array.isArray(correct);
+
+  // disable all inputs
+  document.querySelectorAll(`#${qid}-wrap input`).forEach(i => i.disabled = true);
+
+  // ✅ show "Show Solution" button instead of auto-opening solution
   showSolutionButton(qid);
+
+  // ✅ show PPT button
+  showPPTButton(qid);
+
+  // ✅ highlight correct answers
+  if (!isMulti) {
+    const right = document.getElementById(`${q.id}-${correct}`);
+    if (right) right.parentElement.classList.add("correct-option");
+  } else {
+    correct.forEach(c => {
+      const right = document.getElementById(`${q.id}-${c}`);
+      if (right) right.parentElement.classList.add("correct-option");
+    });
+  }
+
+  // disable submit button
+  document.getElementById(`sub-${qid}`).disabled = true;
 }
+
 function showSolutionButton(qid){
   const btn = document.getElementById(`btn-sol-${qid}`);
   if (btn) btn.style.display = 'inline-block';
   const buttonsDiv = document.getElementById(`${qid}-buttons`);
-  if (buttonsDiv) buttonsDiv.style.display = 'none';
+  if (buttonsDiv) buttonsDiv.style.display = 'block';
 }
+
 function toggleSolution(id,qid){
   const e = document.getElementById(id);
   e.style.display = e.style.display === 'block' ? 'none' : 'block';
@@ -996,16 +1182,23 @@ window.addEventListener('afterprint', () => {
 });
 
 /* WhatsApp share */
+/* WhatsApp share */
 function shareOnWhatsApp(){
   const scoreText = document.getElementById('scoreText').innerText;
-  const details = [...document.querySelectorAll('#scoreDetails tr')].map(row => {
+  const details = [...document.querySelectorAll('#scoreDetails tr')].map((row, index) => {
     const cells = row.querySelectorAll('td');
-    return `Q${cells[0].innerText}: ${cells[1].innerText}\nYour Ans: ${cells[2].innerText}\nCorrect Ans: ${cells[3].innerText}\nResult: ${cells[4].innerText}\n`;
+    return `Q${cells[0].innerText}\nYour Ans: ${cells[2].innerText}\nCorrect Ans: ${cells[3].innerText}\nResult: ${cells[4].innerText}\n`;
   }).join('\n');
 
   const msg = `📘 Quiz Title: ${quizTitle}\n👤 Student: ${student}\n\n${scoreText}\n\n${details}`;
-  window.open(`https://wa.me/9108069409455?text=${encodeURIComponent(msg)}`, "_blank");
+
+  // ✅ Corrected number (example: +91 8069409455 → 918069409455)
+  const phone = "918069409455";  
+
+  window.open(`https://wa.me/${phone}?text=${encodeURIComponent(msg)}`, "_blank");
 }
+
+
 
 document.getElementById('shareWhatsappBtn').onclick = shareOnWhatsApp;
 
