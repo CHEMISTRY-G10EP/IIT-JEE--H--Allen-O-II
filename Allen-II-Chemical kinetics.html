@@ -291,7 +291,7 @@ const Q = [
     "options": [
       "A) The integrated rate expression is $k = \\frac{2}{t} (\\sqrt{[A]_0} - \\sqrt{[A]})$",
       "B) The graph of $\\sqrt{[A]}$ vs $t$ will be a straight line with negative slope <img src='https://i.ibb.co/2YCpHwhf/chemical-kinetics-q1-allen.jpg' style='max-height:70px;'>",
-      "C) The half-life period $t_{1/2} = \\frac{2[A]_0^{1/2}(1 - \\frac{1}{\sqrt{2}})}{k}$",
+		"C)The half-life period $t_{1/2} = \\frac{2[A]_0^{1/2}(1 - \\tfrac{1}{\\sqrt{2}})}{k}$",
       "D) The time taken for 75% completion of reaction $t_{3/4} = \\frac{[A]_0^{1/2}}{k}$"
     ],
     "correct": ["A","B","D"],
@@ -301,6 +301,7 @@ const Q = [
       "rearrange: $\\frac{d[A]}{[A]^{1/2}} = -k dt$.",
       "Integrate both sides from $[A]_0$ at $t=0$ to $[A]$ at $t$: ",
       "$\\int _{[A]_0}^{[A]} [A]^{-1/2} d[A] = \\int_0^t -k dt$.",
+	  "The power rule for integration is given by the formula$\\int x^{n}\\,dx = \\frac{x^{n+1}}{n+1} + C \\quad (\\text{for } n \\ne -1)$",
       "Solving the integrals: $[2[A]^{1/2}]_{[A]_0}^{[A]} = -kt$ leads to", 
       "$2[A]^{1/2} - 2[A]_0^{1/2} = -kt$.",
       "Rearrange to $2([A]^{1/2} - [A]_0^{1/2}) = -kt$ and",
@@ -327,7 +328,8 @@ const Q = [
       "Simplify: $2(\\frac{[A]_0^{1/2}}{2}) = kt_{3/4}$,",
       "which gives $[A]_0^{1/2} = kt_{3/4}$.",
       "Solve for $t_{3/4}$: $t_{3/4} = \\frac{[A]_0^{1/2}}{k}$, confirming option (D)."
-    ]
+   ],
+    "pptUrl": "https://gten-educational-platform.github.io/my-scorm-course/Course4/res/index.html"
   },
   {
     "id": "q2",
@@ -457,9 +459,9 @@ const Q = [
   "solution_steps": [
   "Step 1: Identify the rate-determining step and write the rate law.",
   "The problem states that step (ii) is the slowest, making it the rate-determining step (RDS).",
-  "The rate of the reaction is determined by this step: $\\text{Rate} = k_{4}[X\\cdot ][R-H]$.",
+  "The rate of the reaction is determined by this step: $\\text{Rate} = k_{3}[X\\cdot ][R-H]$.",
   "However, the rate of formation of $R-X$ is given by step (iii):",
-  "$\\frac{d[R-X]}{dt} = k_{3}[R\\cdot ][X_{2}]$.",
+  "$\\frac{d[R-X]}{dt} = k_{4}[R\\cdot ][X_{2}]$.",
   "We need expressions for the intermediate concentrations $[X\\cdot ]$ and $[R\\cdot ]$ using equilibrium and steady-state approximations.",
 
   "Step 2: Determine the concentration of intermediate $X\\cdot$ using the fast equilibrium.",
@@ -468,21 +470,21 @@ const Q = [
 
   "Step 3: Apply the steady-state approximation to intermediate $R\\cdot$.",
   "The net rate of change of $[R\\cdot ]$ is approximately zero:",
-  "$\\frac{d[R\\cdot ]}{dt} = k_{4}[X\\cdot ][R-H] - k_{3}[R\\cdot ][X_{2}] \\approx 0$.",
-  "Solving for $[R\\cdot ]$: $[R\\cdot ] = \\frac{k_{4}[X\\cdot ][R-H]}{k_{3}[X_{2}]}$.",
+  "$\\frac{d[R\\cdot ]}{dt} = k_{3}[X\\cdot ][R-H] - k_{4}[R\\cdot ][X_{2}] \\approx 0$.",
+  "Solving for $[R\\cdot ]$: $[R\\cdot ] = \\frac{k_{3}[X\\cdot ][R-H]}{k_{4}[X_{2}]}$.",
 
   "Step 4: Substitute the expression for $[X\\cdot ]$ into the expression for $[R\\cdot ]$.",
-  "$[R\\cdot ] = \\frac{k_{4}}{k_{3}[X_{2}]}\\left(\\sqrt{\\frac{k_{1}}{k_{2}}[X_{2}] }\\right)[R-H]$.",
-  "Simplifying: $[R\\cdot ] = \\frac{k_{4}}{k_{3}}\\sqrt{\\frac{k_{1}}{k_{2}}}\\frac{[R-H]}{[X_{2}]^{1/2}}$.",
+  "$[R\\cdot ] = \\frac{k_{3}}{k_{4}[X_{2}]}\\left(\\sqrt{\\frac{k_{1}}{k_{2}}[X_{2}] }\\right)[R-H]$.",
+  "Simplifying: $[R\\cdot ] = \\frac{k_{3}}{k_{4}}\\sqrt{\\frac{k_{1}}{k_{2}}}\\frac{[R-H]}{[X_{2}]^{1/2}}$.",
 
   "Step 5: Substitute $[R\\cdot ]$ into the rate expression for $R-X$.",
-  "$\\frac{d[R-X]}{dt} = k_{3}[R\\cdot ][X_{2}]$.",
-  "Plugging in $[R\\cdot ]$: $\\frac{d[R-X]}{dt} = k_{3}\\left(\\frac{k_{4}}{k_{3}}\\sqrt{\\frac{k_{1}}{k_{2}}}\\frac{[R-H]}{[X_{2}]^{1/2}}\\right)[X_{2}]$.",
+  "$\\frac{d[R-X]}{dt} = k_{4}[R\\cdot ][X_{2}]$.",
+  "Plugging in $[R\\cdot ]$: $\\frac{d[R-X]}{dt} = k_{4}\\left(\\frac{k_{3}}{k_{4}}\\sqrt{\\frac{k_{1}}{k_{2}}}\\frac{[R-H]}{[X_{2}]^{1/2}}\\right)[X_{2}]$.",
   "The $k_{3}$ terms cancel and $[X_{2}]$ simplifies:",
-  "$\\frac{d[R-X]}{dt} = k_{4}\\sqrt{\\frac{k_{1}}{k_{2}}}[R-H][X_{2}]^{1/2}$.",
+  "$\\frac{d[R-X]}{dt} = k_{3}\\sqrt{\\frac{k_{1}}{k_{2}}}[R-H][X_{2}]^{1/2}$.",
 
   "Step 6: Evaluate the given options based on the derived rate law.",
-  "For option (A): The effective rate constant is $k_{4}\\sqrt{\\frac{k_{1}}{k_{2}}}$, not $k_{3}k_{4}\\sqrt{\\frac{k_{1}}{k_{2}}}$. So option (A) is incorrect.",
+  "For option (A): The effective rate constant is $k_{3}\\sqrt{\\frac{k_{1}}{k_{2}}}$, not $k_{4}k_{3}\\sqrt{\\frac{k_{1}}{k_{2}}}$. So option (A) is incorrect.",
   "For option (B): The rate depends on $[X_{2}]^{1/2}$, not $[X_{2}]^{1}$. So option (B) is incorrect.",
   "For option (C): The order with respect to $[R-H]$ is 1 and with respect to $[X_{2}]$ is 1/2. Therefore, the overall order is $1 + \\frac{1}{2} = \\frac{3}{2}$. So option (C) is correct.",
   "For option (D): The rate depends directly on $[R-H]^{1}$. So option (D) is correct."
@@ -1190,4 +1192,3 @@ document.addEventListener('DOMContentLoaded', () => {
 </script>
 </body>
 </html>
-
