@@ -1,11 +1,10 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1"> <!-- Added for mobile responsiveness -->
 
-  <title> Quiz – 1. A-II Chemical Kinetics</title>
+  <title> Quiz – CHEMICAL KINETICS A-II</title>
   
   <style>
     body {
@@ -171,38 +170,34 @@
       color:  #FFD700;
       margin-bottom: 6px;
     }
-	.correct-option {
-  background: #155724 !important;
-  color: #d4edda !important;
-}
-.wrong-option {
-  background: #721c24 !important;
-  color: #f8d7da !important;
-}
-/* Left-align MathJax display equations */
 
-mjx-container[jax="CHTML"][display="true"] {
-  text-align: left !important;
-  margin-left: 10px !important;
-  margin-right: auto !important;
-}
+    /* result styles */
+    .correct-option { background-color: #0c4a0d !important; color: white !important; }
+    .wrong-option { background-color: #5c0f09 !important; color: white !important; }
+    .light-correct-option { background-color: #a5d6a7 !important; color: black !important; }
 
-.golden-line {
-  border: none;
-  border-top: 2px solid #FFD700; /* Golden color */
-  margin: 10px 0;
-}
-.step-title {
-  font-weight: bold;
-  color: #FFD700; /* Golden */
-  margin-top: 8px;
-}
+    /* Left-align MathJax display equations */
+    mjx-container[jax="CHTML"][display="true"] {
+      text-align: left !important;
+      margin-left: 10px !important;
+      margin-right: auto !important;
+    }
 
-.step-content {
-  margin-left: 18px; /* Indent the explanation under each step */
-  margin-bottom: 6px;
-}
+    .golden-line {
+      border: none;
+      border-top: 2px solid #FFD700; /* Golden color */
+      margin: 10px 0;
+    }
+    .step-title {
+      font-weight: bold;
+      color: #FFD700; /* Golden */
+      margin-top: 8px;
+    }
 
+    .step-content {
+      margin-left: 18px; /* Indent the explanation under each step */
+      margin-bottom: 6px;
+    }
   </style>
 
   <!-- MathJax Configuration -->
@@ -240,7 +235,7 @@ mjx-container[jax="CHTML"][display="true"] {
 
 <div id="quiz-container">
 
-  <h2> Quiz – 1. A-II Chemical Kinetics</h2>
+  <h2> Quiz – CHEMICAL KINETICS A-II</h2>
   
   <p><strong>Time Elapsed:</strong> <span id="timer">00:00</span></p>
   <div id="questions-container"></div>
@@ -850,6 +845,7 @@ function startQuiz() {
 }
 
 
+
 /* === Build questions === */
 function buildQuestions() {
   const out = document.getElementById('questions-container');
@@ -922,47 +918,76 @@ function showPPTButton(qid){ const b=document.getElementById(`ppt-${qid}`); if(b
 /* grade */
 function grade(qid) {
   const q = Q.find(x => x.id === qid);
+  if(!q) return;
   const correct = q.correct;
   const isMulti = Array.isArray(correct);
 
-  // disable all inputs
+  // disable all inputs for this question
   document.querySelectorAll(`#${qid}-wrap input`).forEach(i => i.disabled = true);
 
-  // ✅ show "Show Solution" button instead of auto-opening solution
+  // show solution and ppt buttons
   showSolutionButton(qid);
-
-  // ✅ still show PPT button
   showPPTButton(qid);
 
-  // mark answers
+  // remove any previous classes (in case user graded previously)
+  document.querySelectorAll(`#${qid}-wrap .option-item`).forEach(el => {
+    el.classList.remove('correct-option','wrong-option','light-correct-option');
+  });
+
   if (!isMulti) {
-    const chosen = document.querySelector(`input[name="${q.id}"]:checked`);
-    if (chosen) {
-      if (chosen.value === correct) {
-        chosen.parentElement.classList.add("correct-option");
+    // === Single correct (MCQ) ===
+    const selected = document.querySelector(`#${qid}-wrap input[type="radio"]:checked`);
+
+    q.options.forEach((_, i) => {
+      const letter = String.fromCharCode(65 + i);
+      const optInput = document.getElementById(`${qid}-${letter}`);
+      if (!optInput) return;
+      const label = optInput.parentElement;
+
+      if (letter === correct) {
+        // this is the correct option
+        if (selected && selected.value === letter) {
+          label.classList.add('correct-option'); // selected correct
+        } else {
+          label.classList.add('light-correct-option'); // unselected correct
+        }
       } else {
-        chosen.parentElement.classList.add("wrong-option");
-        const right = document.getElementById(`${q.id}-${correct}`);
-        if (right) right.parentElement.classList.add("correct-option");
+        // not the correct option
+        if (selected && selected.value === letter) {
+          label.classList.add('wrong-option'); // selected wrong
+        }
       }
-    }
-  } else {
-    // multi-correct marking
-    const chosen = Array.from(document.querySelectorAll(`input[name="${q.id}"]:checked`)).map(i => i.value);
-    correct.forEach(c => {
-      const right = document.getElementById(`${q.id}-${c}`);
-      if (right) right.parentElement.classList.add("correct-option");
     });
-    chosen.forEach(c => {
-      if (!correct.includes(c)) {
-        const wrong = document.getElementById(`${q.id}-${c}`);
-        if (wrong) wrong.parentElement.classList.add("wrong-option");
+
+  } else {
+    // === Multiple correct (MSQ) ===
+    const chosen = Array.from(document.querySelectorAll(`#${qid}-wrap input[type="checkbox"]:checked`)).map(i => i.value);
+
+    q.options.forEach((_, i) => {
+      const letter = String.fromCharCode(65 + i);
+      const optInput = document.getElementById(`${qid}-${letter}`);
+      if (!optInput) return;
+      const label = optInput.parentElement;
+
+      if (correct.includes(letter)) {
+        // is a correct option
+        if (chosen.includes(letter)) {
+          label.classList.add('correct-option'); // selected correct
+        } else {
+          label.classList.add('light-correct-option'); // unselected correct
+        }
+      } else {
+        // not correct
+        if (chosen.includes(letter)) {
+          label.classList.add('wrong-option'); // selected wrong
+        }
       }
     });
   }
 
   // disable submit button after grading
-  document.getElementById(`sub-${qid}`).disabled = true;
+  const sb = document.getElementById(`sub-${qid}`);
+  if (sb) sb.disabled = true;
 }
 
 
@@ -970,31 +995,39 @@ function grade(qid) {
 /* skip */
 function skip(qid) {
   const q = Q.find(x => x.id === qid);
+  if(!q) return;
   const correct = q.correct;
   const isMulti = Array.isArray(correct);
 
   // disable all inputs
   document.querySelectorAll(`#${qid}-wrap input`).forEach(i => i.disabled = true);
 
-  // ✅ show "Show Solution" button instead of auto-opening solution
+  // show solution and ppt button
   showSolutionButton(qid);
-
-  // ✅ show PPT button
   showPPTButton(qid);
 
-  // ✅ highlight correct answers
+  // highlight correct answers
+  document.querySelectorAll(`#${qid}-wrap .option-item`).forEach(el => {
+    el.classList.remove('correct-option','wrong-option','light-correct-option');
+  });
+
   if (!isMulti) {
-    const right = document.getElementById(`${q.id}-${correct}`);
-    if (right) right.parentElement.classList.add("correct-option");
+    q.options.forEach((_, i) => {
+      const letter = String.fromCharCode(65 + i);
+      const opt = document.getElementById(`${q.id}-${letter}`);
+      if (opt) opt.parentElement.classList.add('light-correct-option');
+    });
   } else {
-    correct.forEach(c => {
-      const right = document.getElementById(`${q.id}-${c}`);
-      if (right) right.parentElement.classList.add("correct-option");
+    q.options.forEach((_, i) => {
+      const letter = String.fromCharCode(65 + i);
+      const opt = document.getElementById(`${q.id}-${letter}`);
+      if (opt && q.correct.includes(letter)) opt.parentElement.classList.add('light-correct-option');
     });
   }
 
   // disable submit button
-  document.getElementById(`sub-${qid}`).disabled = true;
+  const sb = document.getElementById(`sub-${qid}`);
+  if (sb) sb.disabled = true;
 }
 
 function showSolutionButton(qid){
@@ -1010,7 +1043,7 @@ function toggleSolution(id,qid){
   if (e.style.display === 'block') showPPTButton(qid);
 }
 
-/* timer, finalSubmit, print, shareOnWhatsApp, report handlers ... remain unchanged */
+/* timer, finalSubmit, print, shareOnWhatsApp, report handlers ... updated finalSubmit to apply highlighting */
 /* Timer */
 function startTimer(){
   const display = document.getElementById('timer');
@@ -1028,6 +1061,13 @@ function startTimer(){
 */
 function finalSubmit(){
   clearInterval(timerHandle);
+
+  // First, grade every question to show colors
+  Q.forEach(q => {
+    try { grade(q.id); } catch(e) { /* continue */ }
+  });
+
+  // disable inputs and hide per-question buttons
   document.querySelectorAll("input").forEach(r => r.disabled = true);
   document.querySelectorAll(".submit-button, .dontknow-button").forEach(b => b.style.display = "none");
 
@@ -1143,7 +1183,6 @@ window.addEventListener('afterprint', () => {
 });
 
 /* WhatsApp share */
-/* WhatsApp share */
 function shareOnWhatsApp(){
   const scoreText = document.getElementById('scoreText').innerText;
   const details = [...document.querySelectorAll('#scoreDetails tr')].map((row, index) => {
@@ -1158,7 +1197,6 @@ function shareOnWhatsApp(){
 
   window.open(`https://wa.me/${phone}?text=${encodeURIComponent(msg)}`, "_blank");
 }
-
 
 
 document.getElementById('shareWhatsappBtn').onclick = shareOnWhatsApp;
