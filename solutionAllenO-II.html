@@ -852,7 +852,6 @@ const Q = [
   },
 ];
 
-
 /* === State === */
 let student = '';
 let timerHandle;
@@ -927,17 +926,29 @@ out.insertAdjacentHTML('beforeend', `
       <button class="toggle-button" id="btn-sol-${q.id}" style="display:none;" onclick="toggleSolution('sol-${q.id}','${q.id}')">Show Solution</button>
     </div>
 
-    <div class="solution" id="sol-${q.id}">
-      <strong>Solution:</strong> ${q.solution || ''}
-      ${q.solution_steps 
-        ? `<hr class="golden-line"><strong>Solution Steps:</strong>` + 
-          q.solution_steps.map(step => 
-            /^Step\s*\d+/i.test(step) 
-              ? `<p class="step-title">${step}</p>` 
-              : `<p class="step-content">${step}</p>`
-          ).join('') 
-        : '' }
-    </div>
+  <div class="solution" id="sol-${q.id}">
+  <strong>Solution:</strong> ${q.solution || ''}
+
+  ${q.solution_image 
+    ? `
+      <hr class="golden-line">
+      <div style="margin:10px 0; text-align:center;">
+        <img src="${q.solution_image}" alt="Solution Image">
+      </div>
+    ` 
+    : ''}
+
+  ${q.solution_steps 
+    ? `<hr class="golden-line"><strong>Solution Steps:</strong>` + 
+      q.solution_steps.map(step => 
+        /^Step\s*\d+/i.test(step) 
+          ? `<p class="step-title">${step}</p>` 
+          : `<p class="step-content">${step}</p>`
+      ).join('') 
+    : '' }
+</div>
+
+
 
     ${pptBtnHTML}
   </div>
@@ -1270,4 +1281,3 @@ document.addEventListener('DOMContentLoaded', () => {
 </script>
 </body>
 </html>
-
